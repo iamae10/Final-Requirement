@@ -1,0 +1,125 @@
+package Driving_Tutorial_System;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+
+public class homepageFrame extends JFrame{
+
+	private JPanel contentPane;
+	private JTextField emailField;
+	private JPasswordField passwordField;
+	 private DataBase userDataBase; 
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DataBase userDataBase = new DataBase();
+					 userDataBase.loadFromFile("database.txt");
+					homepageFrame frame = new homepageFrame(userDataBase);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public homepageFrame(DataBase userDataBase) {
+		 this.userDataBase = userDataBase; 
+		setTitle("Homepage");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1265,825);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		 // Create an instance of the user database and load data from file
+		JButton newhereBtn = new JButton("New Here?");
+		newhereBtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		newhereBtn.setContentAreaFilled(false);
+		newhereBtn.setBorderPainted(false);
+		newhereBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DataBase userDataBase = new DataBase();
+				registrationFrame frame = new registrationFrame(userDataBase);
+				frame.setVisible(true);
+			}
+		});
+		newhereBtn.setBounds(340, 311, 134, 23);
+		contentPane.add(newhereBtn);
+		
+		JButton loginBtn = new JButton("Login");
+		loginBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				 List <User_data> userDataList = userDataBase.getUserDataList();
+				 
+				// Prompt user for login credentials
+                String email = emailField.getText();
+                String password = new String(passwordField.getPassword());
+
+                // Check if the user exists in the database
+                boolean isValidUser = false;
+                for (User_data userData : userDataBase.getUserDataList()) {
+                    if (userData.getEmail().equals(email) && userData.getPassword().equals(password)) {
+                        isValidUser = true;
+                        break;
+                    }
+                }
+                if (isValidUser) {
+                    JOptionPane.showMessageDialog(null, "Login successful!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid email or password!");
+                }
+			}
+		});
+		loginBtn.setBounds(520, 237, 89, 23);
+		contentPane.add(loginBtn);
+		
+		JLabel lblNewLabel = new JLabel("HELLO! Login to your account ");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 45));
+		lblNewLabel.setBounds(596, 41, 627, 47);
+		contentPane.add(lblNewLabel);
+		
+		JLabel emailLbl = new JLabel("Email");
+		emailLbl.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		emailLbl.setBounds(254, 135, 77, 40);
+		contentPane.add(emailLbl);
+		
+		JLabel passwordLbl = new JLabel("Password");
+		passwordLbl.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		passwordLbl.setBounds(254, 186, 119, 40);
+		contentPane.add(passwordLbl);
+		
+		emailField = new JTextField();
+		emailField.setBounds(401, 143, 208, 36);
+		contentPane.add(emailField);
+		emailField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(401, 190, 208, 36);
+		contentPane.add(passwordField);
+	}
+}
+
