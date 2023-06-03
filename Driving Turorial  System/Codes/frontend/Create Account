@@ -1,0 +1,159 @@
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+
+public class CreateAccount extends JFrame {
+	private JLabel backgroundPic;
+	private JButton createBtn, backBtn;
+	private JPasswordField passwordField, confirmPassword;
+	private JTextField nameFill, emailFill, ageFill;
+	private JTextField birthFill;
+	private JTextField heightFill;
+	private JTextField weightFill;
+	private JRadioButton femaleRadioBtn, maleRadioBtn;
+	
+	public CreateAccount() {
+        setSize(1265, 825);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        //create account - BUTTON to create and REDIRECTORY TO DASHBOARD: FRAME 3
+        createBtn = new JButton("");
+        createBtn.setOpaque(false);
+        createBtn.setFocusable(false);
+        createBtn.setFocusPainted(false);
+        createBtn.setContentAreaFilled(false);
+        createBtn.setBorderPainted(false);
+        createBtn.setBounds(768, 662, 204, 67);
+        getContentPane().add(createBtn);
+        
+        //to the previous frame - BUTTON REDIRECTORY TO HOMEPAGE:FRAME1
+        backBtn = new JButton("");
+        backBtn.setOpaque(false);
+        backBtn.setFocusable(false);
+        backBtn.setFocusPainted(false);
+        backBtn.setContentAreaFilled(false);
+        backBtn.setBorderPainted(false);
+        backBtn.setBounds(1165, 20, 65, 67);
+        getContentPane().add(backBtn);
+        
+        //name fill up area
+        nameFill = new JTextField();
+        nameFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        nameFill.setColumns(1);
+        nameFill.setBorder(null);
+        nameFill.setAutoscrolls(false);
+        nameFill.setOpaque(false);
+        nameFill.setBounds(515, 161, 321, 45);
+        getContentPane().add(nameFill);
+        
+        //email fill up area
+        emailFill = new JTextField();
+        emailFill.setOpaque(false);
+        emailFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        emailFill.setColumns(1);
+        emailFill.setBorder(null);
+        emailFill.setAutoscrolls(false);
+        emailFill.setBounds(893, 161, 327, 45);
+        getContentPane().add(emailFill);
+        
+        //age fill up area
+        ageFill = new JTextField();
+        ageFill.setOpaque(false);
+        ageFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        ageFill.setColumns(1);
+        ageFill.setBorder(null);
+        ageFill.setAutoscrolls(false);
+        ageFill.setBounds(515, 278, 321, 45);
+        getContentPane().add(ageFill);
+        
+        //date of birth fill up area
+        birthFill = new JTextField();
+        birthFill.setOpaque(false);
+        birthFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        birthFill.setColumns(1);
+        birthFill.setBorder(null);
+        birthFill.setAutoscrolls(false);
+        birthFill.setBounds(893, 278, 327, 45);
+        getContentPane().add(birthFill);
+        
+        //height fill up area
+        heightFill = new JTextField();
+        heightFill.setOpaque(false);
+        heightFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        heightFill.setColumns(1);
+        heightFill.setBorder(null);
+        heightFill.setAutoscrolls(false);
+        heightFill.setBounds(893, 408, 124, 45);
+        getContentPane().add(heightFill);
+        
+        //weight fill up area
+        weightFill = new JTextField();
+        weightFill.setOpaque(false);
+        weightFill.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        weightFill.setColumns(1);
+        weightFill.setBorder(null);
+        weightFill.setAutoscrolls(false);
+        weightFill.setBounds(1096, 408, 124, 45);
+        getContentPane().add(weightFill);
+        
+        //male radio button
+        maleRadioBtn = new JRadioButton("");
+        maleRadioBtn.setOpaque(false);
+        maleRadioBtn.setFocusable(false);
+        maleRadioBtn.setFocusPainted(false);
+        maleRadioBtn.setContentAreaFilled(false);
+        maleRadioBtn.setBounds(589, 394, 28, 67);
+        getContentPane().add(maleRadioBtn);
+        
+        //female radio button
+        femaleRadioBtn = new JRadioButton("");
+        femaleRadioBtn.setOpaque(false);
+        femaleRadioBtn.setFocusable(false);
+        femaleRadioBtn.setFocusPainted(false);
+        femaleRadioBtn.setContentAreaFilled(false);
+        femaleRadioBtn.setBounds(751, 394, 28, 67);
+        getContentPane().add(femaleRadioBtn);
+        
+        //password area pwfield
+        passwordField = new JPasswordField();
+        passwordField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        passwordField.setBorder(null);
+        passwordField.setColumns(1);
+        passwordField.setOpaque(false);
+        passwordField.setAutoscrolls(false);
+        passwordField.setBounds(515, 541, 314, 46);
+        getContentPane().add(passwordField);
+        
+        //confirm password pwfield
+        confirmPassword = new JPasswordField();
+        confirmPassword.setOpaque(false);
+        confirmPassword.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        confirmPassword.setColumns(1);
+        confirmPassword.setBorder(null);
+        confirmPassword.setAutoscrolls(false);
+        confirmPassword.setBounds(893, 541, 327, 46);
+        getContentPane().add(confirmPassword);
+        
+        //background picture
+        backgroundPic = new JLabel("");
+        backgroundPic.setFocusable(false);
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Untitled\\Create Account - 2.png"));
+        backgroundPic.setBounds(0, 0, 1251, 788);
+        getContentPane().add(backgroundPic);
+        
+	}
+	
+	public static void main(String[] args) {
+		CreateAccount frame = new CreateAccount();
+		frame.setVisible(true);
+	}
+}
