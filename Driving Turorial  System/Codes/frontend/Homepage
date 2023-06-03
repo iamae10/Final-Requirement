@@ -1,0 +1,85 @@
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import java.awt.Font;
+
+public class Homepage extends JFrame {
+	private JLabel backgroundPic;
+	private JButton aboutBtn,createAccBtn,loginBtn;;
+	private JPasswordField passwordField;
+	private JTextField emailForm;
+	
+    public Homepage() {
+    	//frame layout
+        getContentPane().setLayout(null);
+        setSize(1265, 825);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+        //email fill up area
+        emailForm = new JTextField();
+        emailForm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        emailForm.setColumns(1);
+        emailForm.setBorder(null);
+        emailForm.setAutoscrolls(false);
+        emailForm.setOpaque(false);
+        emailForm.setBounds(860, 293, 305, 50);
+        getContentPane().add(emailForm);
+
+        //password area
+        passwordField = new JPasswordField();
+        passwordField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        passwordField.setBorder(null);
+        passwordField.setColumns(1);
+        passwordField.setOpaque(false);
+        passwordField.setAutoscrolls(false);
+        passwordField.setBounds(860, 438, 305, 46);
+        getContentPane().add(passwordField);
+        
+        //login - BUTTON to login and REDIRECTORY TO DASHBOARD: FRAME 3
+        loginBtn = new JButton("");
+        loginBtn.setOpaque(false);
+        loginBtn.setFocusable(false);
+        loginBtn.setFocusPainted(false);
+        loginBtn.setContentAreaFilled(false);
+        loginBtn.setBorderPainted(false);
+        loginBtn.setBounds(1011, 520, 169, 49);
+        getContentPane().add(loginBtn);
+        
+        //about - BUTTON REDIRECTORY TO ABOUT:FRAME 7
+        aboutBtn = new JButton("");
+        aboutBtn.setFocusPainted(false);
+        aboutBtn.setFocusable(false);
+        aboutBtn.setOpaque(false);
+        aboutBtn.setContentAreaFilled(false);
+        aboutBtn.setBorderPainted(false);
+        aboutBtn.setBounds(168, 36, 77, 36);
+        getContentPane().add(aboutBtn);
+        
+        //create account - BUTTON REDIRECTORY TO CREATE ACCOUNT:FRAME 2
+        createAccBtn = new JButton("");
+        createAccBtn.setOpaque(false);
+        createAccBtn.setFocusable(false);
+        createAccBtn.setFocusPainted(false);
+        createAccBtn.setContentAreaFilled(false);
+        createAccBtn.setBorderPainted(false);
+        createAccBtn.setBounds(841, 639, 189, 36);
+        getContentPane().add(createAccBtn);
+        
+        //background picture
+        backgroundPic = new JLabel("");
+        backgroundPic.setFocusable(false);
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Untitled\\Login - 1.png"));
+        backgroundPic.setBounds(0, 0, 1251, 788);
+        getContentPane().add(backgroundPic);
+    }
+
+    public static void main(String[] args) {
+        Homepage frame = new Homepage();
+        frame.setVisible(true);
+    }
+}
