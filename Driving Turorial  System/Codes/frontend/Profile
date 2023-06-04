@@ -7,9 +7,9 @@ import javax.swing.JTextArea;
 import java.awt.Font;
 
 public class Dashboard extends JFrame {
-    JLabel backgroundPic;
-    JButton dashboardBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn, profileBtn, pwBtn, emailBtn;
-    JTextArea nameDisplay, ageDisplay, emailDisplay, sexDisplay, birthDisplay, heightDisplay, weightDisplay;
+    private JLabel backgroundPic;
+    private JButton dashboardBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn, profileBtn, pwBtn, emailBtn;
+    private JTextArea nameDisplay, ageDisplay, emailDisplay, sexDisplay, birthDisplay, heightDisplay, weightDisplay;
 
     public Dashboard() {
         setSize(1265, 825);
