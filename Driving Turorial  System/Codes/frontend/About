@@ -5,8 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
 public class About extends JFrame {
-	JLabel backgroundPic;
-	JButton backBtn;
+	private JLabel backgroundPic;
+	private JButton backBtn;
 	
 	public About() {
 		setSize(1265, 825);
