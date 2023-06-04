@@ -1,0 +1,40 @@
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.WindowConstants;
+
+public class About extends JFrame {
+	JLabel backgroundPic;
+	JButton backBtn;
+	
+	public About() {
+		setSize(1265, 825);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+        
+        //to the previous frame - BUTTON REDIRECTORY TO HOMEPAGE:FRAME1
+        backBtn = new JButton("");
+        backBtn.setOpaque(false);
+        backBtn.setFocusable(false);
+        backBtn.setFocusPainted(false);
+        backBtn.setContentAreaFilled(false);
+        backBtn.setBorderPainted(false);
+        backBtn.setBounds(1160, 20, 70, 65);
+        getContentPane().add(backBtn);
+        
+        //background picture
+        backgroundPic = new JLabel("");
+        backgroundPic.setFocusable(false);
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\bg pictures\\About.png"));
+        backgroundPic.setBounds(0, 0, 1251, 788);
+        getContentPane().add(backgroundPic);
+	}
+
+	public static void main(String[] args) {
+		About frame = new About();
+		frame.setVisible(true);
+	}
+
+}
