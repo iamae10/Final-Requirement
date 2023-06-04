@@ -1,0 +1,181 @@
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.WindowConstants;
+import javax.swing.JTextArea;
+import java.awt.Font;
+
+public class Dashboard extends JFrame {
+    JLabel backgroundPic;
+    JButton dashboardBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn, profileBtn, pwBtn, emailBtn;
+    JTextArea nameDisplay, ageDisplay, emailDisplay, sexDisplay, birthDisplay, heightDisplay, weightDisplay;
+
+    public Dashboard() {
+        setSize(1265, 825);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+        
+        //MENU BUTTONS
+        //dashboard - BUTTON REDIRECTORY TO DASHBOARD: FRAME 3
+        dashboardBtn = new JButton("");
+        dashboardBtn.setOpaque(false);
+        dashboardBtn.setFocusable(false);
+        dashboardBtn.setFocusPainted(false);
+        dashboardBtn.setContentAreaFilled(false);
+        dashboardBtn.setBorderPainted(false);
+        dashboardBtn.setBounds(36, 343, 137, 34);
+        getContentPane().add(dashboardBtn);
+        
+        //module - BUTTON REDIRECTORY TO MODULES: FRAME 5
+        moduleBtn = new JButton("");
+        moduleBtn.setOpaque(false);
+        moduleBtn.setFocusable(false);
+        moduleBtn.setFocusPainted(false);
+        moduleBtn.setContentAreaFilled(false);
+        moduleBtn.setBorderPainted(false);
+        moduleBtn.setBounds(46, 224, 199, 34);
+        getContentPane().add(moduleBtn);
+        
+        //quizzes - BUTTON REDIRECTORY TO QUIZZES: FRAME 6
+        quizBtn = new JButton("");
+        quizBtn.setOpaque(false);
+        quizBtn.setFocusable(false);
+        quizBtn.setFocusPainted(false);
+        quizBtn.setContentAreaFilled(false);
+        quizBtn.setBorderPainted(false);
+        quizBtn.setBounds(40, 398, 127, 39);
+        getContentPane().add(quizBtn);
+        
+        //about - BUTTON REDIRECTORY TO ABOUT
+        aboutBtn = new JButton("");
+        aboutBtn.setOpaque(false);
+        aboutBtn.setFocusable(false);
+        aboutBtn.setFocusPainted(false);
+        aboutBtn.setContentAreaFilled(false);
+        aboutBtn.setBorderPainted(false);
+        aboutBtn.setBounds(36, 458, 111, 34);
+        getContentPane().add(aboutBtn);
+        
+        //LOGOUT
+        //logout - BUTTON TO SIGN OUT THE ACCOUNT
+        logoutBtn = new JButton("");
+        logoutBtn.setOpaque(false);
+        logoutBtn.setFocusable(false);
+        logoutBtn.setFocusPainted(false);
+        logoutBtn.setContentAreaFilled(false);
+        logoutBtn.setBorderPainted(false);
+        logoutBtn.setBounds(46, 721, 127, 39);
+        getContentPane().add(logoutBtn);
+        
+        //EDIT SECTION
+        //edit profile - BUTTON TO MAKE CHANGES IN THE PROFILE
+        profileBtn = new JButton("");
+        profileBtn.setOpaque(false);
+        profileBtn.setFocusable(false);
+        profileBtn.setFocusPainted(false);
+        profileBtn.setContentAreaFilled(false);
+        profileBtn.setBorderPainted(false);
+        profileBtn.setBounds(775, 247, 344, 50);
+        getContentPane().add(profileBtn);
+        
+        //change password - BUTTON TO CHANGE USER PASSWORD
+        pwBtn = new JButton("");
+        pwBtn.setOpaque(false);
+        pwBtn.setFocusable(false);
+        pwBtn.setFocusPainted(false);
+        pwBtn.setContentAreaFilled(false);
+        pwBtn.setBorderPainted(false);
+        pwBtn.setBounds(775, 388, 212, 27);
+        getContentPane().add(pwBtn);
+        
+        //change email - BUTTON TO CHANGE EMAIL ADDRESS
+        emailBtn = new JButton("");
+        emailBtn.setOpaque(false);
+        emailBtn.setFocusable(false);
+        emailBtn.setFocusPainted(false);
+        emailBtn.setContentAreaFilled(false);
+        emailBtn.setBorderPainted(false);
+        emailBtn.setBounds(775, 440, 272, 27);
+        getContentPane().add(emailBtn);
+        
+        //PROFILE SECTION - TEXT AREAS
+        //left side
+        //displays user name
+        nameDisplay = new JTextArea();
+        nameDisplay.setEditable(false);
+        nameDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        nameDisplay.setOpaque(false);
+        nameDisplay.setWrapStyleWord(true);
+        nameDisplay.setBounds(432, 545, 247, 24);
+        getContentPane().add(nameDisplay);
+        
+        //displays user age
+        ageDisplay = new JTextArea();
+        ageDisplay.setEditable(false);
+        ageDisplay.setWrapStyleWord(true);
+        ageDisplay.setOpaque(false);
+        ageDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        ageDisplay.setBounds(414, 602, 265, 24);
+        getContentPane().add(ageDisplay);
+        
+        //displays user age
+        emailDisplay = new JTextArea();
+        emailDisplay.setEditable(false);
+        emailDisplay.setWrapStyleWord(true);
+        emailDisplay.setOpaque(false);
+        emailDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        emailDisplay.setBounds(434, 659, 245, 24);
+        getContentPane().add(emailDisplay);
+        
+        //right side
+        //displays sex
+        sexDisplay = new JTextArea();
+        sexDisplay.setWrapStyleWord(true);
+        sexDisplay.setOpaque(false);
+        sexDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        sexDisplay.setEditable(false);
+        sexDisplay.setBounds(825, 570, 239, 24);
+        getContentPane().add(sexDisplay);
+        
+        //displays birthday
+        birthDisplay = new JTextArea();
+        birthDisplay.setWrapStyleWord(true);
+        birthDisplay.setOpaque(false);
+        birthDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        birthDisplay.setEditable(false);
+        birthDisplay.setBounds(907, 611, 212, 27);
+        getContentPane().add(birthDisplay);
+        
+        //displays height
+        heightDisplay = new JTextArea();
+        heightDisplay.setWrapStyleWord(true);
+        heightDisplay.setOpaque(false);
+        heightDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        heightDisplay.setEditable(false);
+        heightDisplay.setBounds(854, 651, 265, 27);
+        getContentPane().add(heightDisplay);
+        
+        //displays weight
+        weightDisplay = new JTextArea();
+        weightDisplay.setEditable(false);
+        weightDisplay.setWrapStyleWord(true);
+        weightDisplay.setOpaque(false);
+        weightDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+        weightDisplay.setBounds(854, 694, 265, 27);
+        getContentPane().add(weightDisplay);
+
+        //background picture
+        backgroundPic = new JLabel("");
+        backgroundPic.setFocusable(false);
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Untitled\\Profile - 4.png"));
+        backgroundPic.setBounds(0, 0, 1251, 788);
+        getContentPane().add(backgroundPic);
+    }
+
+    public static void main(String[] args) {
+        Dashboard frame = new Dashboard();
+        frame.setVisible(true);
+    }
+}
