@@ -6,12 +6,12 @@ import javax.swing.WindowConstants;
 import javax.swing.JTextArea;
 import java.awt.Font;
 
-public class Dashboard extends JFrame {
-    private JLabel backgroundPic;
-    private JButton dashboardBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn, profileBtn, pwBtn, emailBtn;
-    private JTextArea nameDisplay, ageDisplay, emailDisplay, sexDisplay, birthDisplay, heightDisplay, weightDisplay;
+public class Profile extends JFrame {
+    JLabel backgroundPic;
+    JButton dashboardBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn, profileBtn, changePwBtn;
+    JTextArea nameDisplay, ageDisplay, emailDisplay, sexDisplay, birthDisplay, heightDisplay, weightDisplay;
 
-    public Dashboard() {
+    public Profile() {
         setSize(1265, 825);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -77,30 +77,19 @@ public class Dashboard extends JFrame {
         profileBtn.setFocusPainted(false);
         profileBtn.setContentAreaFilled(false);
         profileBtn.setBorderPainted(false);
-        profileBtn.setBounds(775, 247, 344, 50);
+        profileBtn.setBounds(1068, 247, 51, 50);
         getContentPane().add(profileBtn);
         
-        //change password - BUTTON TO CHANGE USER PASSWORD
-        pwBtn = new JButton("");
-        pwBtn.setOpaque(false);
-        pwBtn.setFocusable(false);
-        pwBtn.setFocusPainted(false);
-        pwBtn.setContentAreaFilled(false);
-        pwBtn.setBorderPainted(false);
-        pwBtn.setBounds(775, 388, 212, 27);
-        getContentPane().add(pwBtn);
+        //change password and email address - BUTTON 
+        changePwBtn = new JButton("");
+        changePwBtn.setOpaque(false);
+        changePwBtn.setFocusable(false);
+        changePwBtn.setFocusPainted(false);
+        changePwBtn.setContentAreaFilled(false);
+        changePwBtn.setBorderPainted(false);
+        changePwBtn.setBounds(1068, 371, 51, 50);
+        getContentPane().add(changePwBtn);
         
-        //change email - BUTTON TO CHANGE EMAIL ADDRESS
-        emailBtn = new JButton("");
-        emailBtn.setOpaque(false);
-        emailBtn.setFocusable(false);
-        emailBtn.setFocusPainted(false);
-        emailBtn.setContentAreaFilled(false);
-        emailBtn.setBorderPainted(false);
-        emailBtn.setBounds(775, 440, 272, 27);
-        getContentPane().add(emailBtn);
-        
-        //PROFILE SECTION - TEXT AREAS
         //left side
         //displays user name
         nameDisplay = new JTextArea();
@@ -169,13 +158,13 @@ public class Dashboard extends JFrame {
         //background picture
         backgroundPic = new JLabel("");
         backgroundPic.setFocusable(false);
-        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Untitled\\Profile - 4.png"));
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\bg pictures\\Profile - 4.png"));
         backgroundPic.setBounds(0, 0, 1251, 788);
         getContentPane().add(backgroundPic);
     }
 
     public static void main(String[] args) {
-        Dashboard frame = new Dashboard();
+        Profile frame = new Profile();
         frame.setVisible(true);
     }
 }
