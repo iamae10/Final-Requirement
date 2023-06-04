@@ -1,0 +1,119 @@
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.WindowConstants;
+
+public class Dashboard extends JFrame {
+	private JLabel backgroundPic;
+	private JButton profileBtn, moduleBtn, quizBtn, aboutBtn, logoutBtn;
+	private JTextArea moduleProgressDisplay, quizProgressDisplay, moduleCompletedDisplay, quizCompletedDisplay;
+		
+	public Dashboard() {
+		setSize(1265, 825);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+        
+        //MENU BUTTONS
+        //profile - BUTTON REDIRECTORY TO PROFILE: FRAME 4
+        profileBtn = new JButton("");
+        profileBtn.setOpaque(false);
+        profileBtn.setFocusable(false);
+        profileBtn.setFocusPainted(false);
+        profileBtn.setContentAreaFilled(false);
+        profileBtn.setBorderPainted(false);
+        profileBtn.setBounds(36, 343, 137, 34);
+        getContentPane().add(profileBtn);
+        
+        //module - BUTTON REDIRECTORY TO MODULES: FRAME 5
+        moduleBtn = new JButton("");
+        moduleBtn.setOpaque(false);
+        moduleBtn.setFocusable(false);
+        moduleBtn.setFocusPainted(false);
+        moduleBtn.setContentAreaFilled(false);
+        moduleBtn.setBorderPainted(false);
+        moduleBtn.setBounds(36, 288, 151, 34);
+        getContentPane().add(moduleBtn);
+        
+        //quizzes - BUTTON REDIRECTORY TO QUIZZES: FRAME 6
+        quizBtn = new JButton("");
+        quizBtn.setOpaque(false);
+        quizBtn.setFocusable(false);
+        quizBtn.setFocusPainted(false);
+        quizBtn.setContentAreaFilled(false);
+        quizBtn.setBorderPainted(false);
+        quizBtn.setBounds(36, 403, 131, 34);
+        getContentPane().add(quizBtn);
+        
+        //about - BUTTON REDIRECTORY TO ABOUT
+        aboutBtn = new JButton("");
+        aboutBtn.setOpaque(false);
+        aboutBtn.setFocusable(false);
+        aboutBtn.setFocusPainted(false);
+        aboutBtn.setContentAreaFilled(false);
+        aboutBtn.setBorderPainted(false);
+        aboutBtn.setBounds(36, 458, 111, 34);
+        getContentPane().add(aboutBtn);
+        
+        //LOGOUT
+        //logout - BUTTON TO SIGN OUT THE ACCOUNT
+        logoutBtn = new JButton("");
+        logoutBtn.setOpaque(false);
+        logoutBtn.setFocusable(false);
+        logoutBtn.setFocusPainted(false);
+        logoutBtn.setContentAreaFilled(false);
+        logoutBtn.setBorderPainted(false);
+        logoutBtn.setBounds(46, 728, 127, 39);
+        getContentPane().add(logoutBtn);
+        
+        //TEXT AREAS
+        //display user module display progress
+        moduleProgressDisplay = new JTextArea();
+        moduleProgressDisplay.setEditable(false);
+        moduleProgressDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        moduleProgressDisplay.setOpaque(false);
+        moduleProgressDisplay.setWrapStyleWord(true);
+        moduleProgressDisplay.setBounds(476, 591, 70, 39);
+        getContentPane().add(moduleProgressDisplay);
+        
+        quizProgressDisplay = new JTextArea();
+        quizProgressDisplay.setEditable(false);
+        quizProgressDisplay.setWrapStyleWord(true);
+        quizProgressDisplay.setOpaque(false);
+        quizProgressDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        quizProgressDisplay.setBounds(933, 591, 70, 39);
+        getContentPane().add(quizProgressDisplay);
+        
+        moduleCompletedDisplay = new JTextArea();
+        moduleCompletedDisplay.setEditable(false);
+        moduleCompletedDisplay.setWrapStyleWord(true);
+        moduleCompletedDisplay.setOpaque(false);
+        moduleCompletedDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        moduleCompletedDisplay.setBounds(476, 664, 70, 39);
+        getContentPane().add(moduleCompletedDisplay);
+        
+        quizCompletedDisplay = new JTextArea();
+        quizCompletedDisplay.setEditable(false);
+        quizCompletedDisplay.setWrapStyleWord(true);
+        quizCompletedDisplay.setOpaque(false);
+        quizCompletedDisplay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+        quizCompletedDisplay.setBounds(933, 664, 70, 39);
+        getContentPane().add(quizCompletedDisplay);
+        
+		//background picture
+        backgroundPic = new JLabel("");
+        backgroundPic.setFocusable(false);
+        backgroundPic.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\bg pictures\\Dashboard - 3.png"));
+        backgroundPic.setBounds(0, 0, 1251, 788);
+        getContentPane().add(backgroundPic);
+	}
+	
+	public static void main(String[] args) {
+		Dashboard frame = new Dashboard();
+		frame.setVisible(true);
+	}
+}
