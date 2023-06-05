@@ -1,6 +1,5 @@
 package Driving_Tutorial_System;
 
-
 import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
@@ -74,26 +73,28 @@ import java.io.IOException;
 	            JOptionPane.showMessageDialog(null, "Error occurred while loading data: " + e.getMessage());
 	        }
 	    }
-		 public boolean loginUser(String email, String password) {
-		        try (BufferedReader reader = new BufferedReader(new FileReader("database.txt"))) {
-		            String line;
-		            while ((line = reader.readLine()) != null) {
-		                String[] userData = line.split(",");
-		                if (userData.length == 8) {
-		                String storedEmail = userData[1];
-		                String storedPassword = userData[7];
-                      
+		public boolean loginUser(String email, String password) {
+		    try (BufferedReader reader = new BufferedReader(new FileReader("database.txt"))) {
+		        String line;
+		        while ((line = reader.readLine()) != null) {
+		            String[] userData = line.split(",");
+
+		            // Ensure that userData has the correct number of fields
+		            if (userData.length == 9) {
+		                String storedEmail = userData[1].trim();
+		                String storedPassword = userData[8].trim();
+
 		                if (email.equals(storedEmail) && password.equals(storedPassword)) {
 		                    return true;
 		                }
-		                }
 		            }
-		        } catch (IOException e) {
-		            JOptionPane.showMessageDialog(null, "An error occurred during login.");
 		        }
-
-		        return false;
+		    } catch (IOException e) {
+		        JOptionPane.showMessageDialog(null, "An error occurred during login.");
 		    }
+
+		    return false;
+		}
+
 	}
 	
-
