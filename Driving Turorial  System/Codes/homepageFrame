@@ -15,36 +15,31 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
-public class homepageFrame extends JFrame{
+public class homepageFrame extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField emailField;
-	private JPasswordField passwordField;
-	 private DataBase userDataBase; 
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DataBase userDataBase = new DataBase();
-					 userDataBase.loadFromFile("database.txt");
-					homepageFrame frame = new homepageFrame(userDataBase);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+public static void main(String[] args) {
+	EventQueue.invokeLater(new Runnable() {
+		public void run() {
+			try {
+				DataBase userDataBase = new DataBase();
+				homepageFrame frame = new homepageFrame(userDataBase);
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		});
-	}
+		}
+	});
+}
 
-	/**
-	 * Create the frame.
-	 */
+	 private JPanel contentPane;
+	 private JTextField emailField;
+	 private JPasswordField passwordField;
+	 private DataBase userDataBase; 
+	 
+
 	public homepageFrame(DataBase userDataBase) {
 		 this.userDataBase = userDataBase; 
+		 
 		setTitle("Homepage");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1265,825);
@@ -73,27 +68,21 @@ public class homepageFrame extends JFrame{
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				 List <User_data> userDataList = userDataBase.getUserDataList();
-				 
-				// Prompt user for login credentials
-                String email = emailField.getText();
-                String password = new String(passwordField.getPassword());
-
-                // Check if the user exists in the database
-                boolean isValidUser = false;
-                for (User_data userData : userDataBase.getUserDataList()) {
-                    if (userData.getEmail().equals(email) && userData.getPassword().equals(password)) {
-                        isValidUser = true;
-                        break;
-                    }
-                }
-                if (isValidUser) {
-                    JOptionPane.showMessageDialog(null, "Login successful!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Invalid email or password!");
-                }
-			}
-		});
+		                String email = emailField.getText();
+		                String password = new String(passwordField.getPassword());
+                        boolean check = false;
+                        
+		                if ( userDataBase.loginUser(email, password)) {
+		                	 check = true;
+		                    JOptionPane.showMessageDialog(null, "Login successful.");
+		                    // Proceed to another frame or perform desired actions
+		                    DashboardFrame frame = new DashboardFrame();
+							frame.setVisible(true);
+		                } else {
+		                    JOptionPane.showMessageDialog(null, "Invalid email or password.");
+		                }
+		            }
+		        });
 		loginBtn.setBounds(520, 237, 89, 23);
 		contentPane.add(loginBtn);
 		
