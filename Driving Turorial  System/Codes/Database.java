@@ -11,8 +11,10 @@ import java.util.List;
 import java.io.IOException;
 
 	public class DataBase {
+		
 		//declare a private instance to store the objects of User_Data class
 		List <User_data> userInfos;
+		
 		//It is invoked when a new instance of User_DataBase is created
 		public DataBase() {
 		//create an empty list to store data
@@ -72,5 +74,26 @@ import java.io.IOException;
 	            JOptionPane.showMessageDialog(null, "Error occurred while loading data: " + e.getMessage());
 	        }
 	    }
+		 public boolean loginUser(String email, String password) {
+		        try (BufferedReader reader = new BufferedReader(new FileReader("database.txt"))) {
+		            String line;
+		            while ((line = reader.readLine()) != null) {
+		                String[] userData = line.split(",");
+		                if (userData.length == 8) {
+		                String storedEmail = userData[1];
+		                String storedPassword = userData[7];
+                      
+		                if (email.equals(storedEmail) && password.equals(storedPassword)) {
+		                    return true;
+		                }
+		                }
+		            }
+		        } catch (IOException e) {
+		            JOptionPane.showMessageDialog(null, "An error occurred during login.");
+		        }
+
+		        return false;
+		    }
 	}
 	
+
