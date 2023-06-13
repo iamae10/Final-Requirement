@@ -1,0 +1,250 @@
+import java.awt.EventQueue;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.Timer;
+
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+public class Registration extends Login {
+
+	private JPanel contentPane;
+	private JTextField namefield;
+	private JTextField enterEmail;
+	private JTextField ageField;
+	private JRadioButton femaleRadiobtn, maleRadiobtn;
+	private JTextField birthField, heightField, weightField;
+	private JPasswordField enterPassword, verifyPassword;
+
+	
+	public Registration() {
+		
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);		
+		
+		JLabel WarningLbl = new JLabel("");
+		WarningLbl.setBounds(882, 217, 204, 14);
+		contentPane.add(WarningLbl);
+		
+		namefield = new JTextField();
+//		namefield.addKeyListener(new KeyAdapter() {
+//			@Override
+//			public void keyTyped(KeyEvent e) {
+//				if (e.getKeyChar() == ' ') {
+//					e.consume();
+//				}
+//			}
+//		});
+		namefield.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		namefield.setColumns(1);
+		namefield.setBorder(null);
+		namefield.setAutoscrolls(false);
+		namefield.setOpaque(false);
+		namefield.setColumns(10);
+	    namefield.setBounds(504, 161, 345, 45);			
+	    
+	    contentPane.add(namefield);
+		
+	    enterEmail = new JTextField();
+	    enterEmail.addKeyListener(new KeyAdapter() {
+	    	 private Timer timer = new Timer(500, new ActionListener() {
+	    	        @Override
+	    	        public void actionPerformed(ActionEvent e) {
+	    	            validateEmail();
+	    	        }
+	    	    });
+
+	    	    @Override
+	    	    public void keyReleased(KeyEvent e) {
+	    	        timer.restart();
+	    	    }
+
+	    	    private void validateEmail() {
+	    	        String PATTERN = "^[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,5}$";
+	    	        Pattern patt = Pattern.compile(PATTERN);
+	    	        Matcher match = patt.matcher(enterEmail.getText());
+	    	        if (!match.matches()) {
+	    	            WarningLbl.setText("Please enter a valid email.");
+	    	        }
+	    	        else {
+	    	        	WarningLbl.setText(null);
+	    	        }
+	    	    }
+	    	});
+		enterEmail.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		enterEmail.setOpaque(false);
+		enterEmail.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		enterEmail.setColumns(1);
+	    enterEmail.setBorder(null);
+	    enterEmail.setAutoscrolls(false);
+	    enterEmail.setBounds(882, 161, 345, 45);
+	    
+		contentPane.add(enterEmail);
+		
+		ageField = new JTextField();
+		ageField.setOpaque(false);
+		ageField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		ageField.setColumns(1);
+		ageField.setBorder(null);
+		ageField.setAutoscrolls(false);
+		ageField.setBounds(504, 278, 321, 45);
+		
+		contentPane.add(ageField);
+		
+		ButtonGroup userSex = new ButtonGroup();
+		femaleRadiobtn = new JRadioButton("");
+		femaleRadiobtn.setOpaque(false);
+		femaleRadiobtn.setFocusable(false);
+		femaleRadiobtn.setFocusPainted(false);
+		femaleRadiobtn.setContentAreaFilled(false);
+		femaleRadiobtn.setBounds(751, 394, 28, 67);
+        
+		contentPane.add(femaleRadiobtn);
+		femaleRadiobtn.setActionCommand("Female");
+		
+		maleRadiobtn = new JRadioButton("");
+		maleRadiobtn.setOpaque(false);
+		maleRadiobtn.setFocusable(false);
+		maleRadiobtn.setFocusPainted(false);
+		maleRadiobtn.setContentAreaFilled(false);
+		maleRadiobtn.setBounds(589, 394, 28, 67);
+		
+		contentPane.add(maleRadiobtn);
+		maleRadiobtn.setActionCommand("Male");
+		
+		userSex.add(femaleRadiobtn);
+		userSex.add(maleRadiobtn);
+		
+		birthField = new JTextField();
+		birthField.setOpaque(false);
+		birthField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		birthField.setColumns(1);
+        birthField.setBorder(null);
+        birthField.setAutoscrolls(false);
+        birthField.setBounds(882, 278, 327, 45);
+        
+		contentPane.add(birthField);
+		
+		heightField = new JTextField();
+		heightField = new JTextField();
+		heightField.setOpaque(false);
+		heightField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		heightField.setColumns(1);
+		heightField.setBorder(null);
+		heightField.setAutoscrolls(false);
+		heightField.setBounds(882, 408, 145, 45);
+
+		contentPane.add(heightField);
+		
+		weightField = new JTextField();
+		weightField.setOpaque(false);
+		weightField.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		weightField.setColumns(1);
+		weightField.setBorder(null);
+		weightField.setAutoscrolls(false);
+		weightField.setBounds(1085, 408, 142, 45);
+		
+		contentPane.add(weightField);
+		
+		enterPassword = new JPasswordField();
+		enterPassword.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+	    enterPassword.setBorder(null);
+	    enterPassword.setColumns(1);
+	    enterPassword.setOpaque(false);
+	    enterPassword.setAutoscrolls(false);
+	    enterPassword.setBounds(504, 541, 314, 46);			
+	    
+	    contentPane.add(enterPassword);
+		
+		verifyPassword = new JPasswordField();
+		verifyPassword.setOpaque(false);
+		verifyPassword.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		verifyPassword.setColumns(1);
+		verifyPassword.setBorder(null);
+		verifyPassword.setAutoscrolls(false);
+		verifyPassword.setBounds(882, 541, 327, 46);			
+		
+		contentPane.add(verifyPassword);
+		
+		JButton registerBtn = new JButton("");
+		registerBtn.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        String fullName = namefield.getText();
+		        String email = enterEmail.getText().trim();
+		        String selectedGender = userSex.getSelection().getActionCommand();
+		        String dateOfBirth = birthField.getText();
+		        String password = new String(enterPassword.getPassword()).trim();
+		        String verification = new String(verifyPassword.getPassword()).trim();
+		        int age = Integer.parseInt(ageField.getText());
+		        double height = Double.parseDouble(heightField.getText());
+		        double weight = Double.parseDouble(weightField.getText());
+
+		        User user = new User();
+		        user.register(fullName, email, selectedGender, dateOfBirth, password, verification, age, height, weight);
+		        clearFields();
+		    }
+		});
+
+		
+		registerBtn.setOpaque(false);
+        registerBtn.setFocusable(false);
+        registerBtn.setFocusPainted(false);
+        registerBtn.setContentAreaFilled(false);
+        registerBtn.setBorderPainted(false);
+		
+        registerBtn.setBounds(768, 662, 204, 67);
+		contentPane.add(registerBtn);
+		
+		JLabel backgroundPic = new JLabel("");
+		backgroundPic.setFocusable(false);
+		backgroundPic.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Create Account - 2.png"));
+		backgroundPic.setBounds(0, 0,  1251, 788);
+		
+	    contentPane.add(backgroundPic);
+	
+	
+    }
+	
+	private void clearFields() {
+        namefield.setText("");
+        enterEmail.setText("");
+        ageField.setText("");
+        maleRadiobtn.setSelected(true);
+        birthField.setText("");
+        heightField.setText("");
+        heightField.setText("");
+        weightField.setText("");
+        heightField.setText("");
+        enterPassword.setText("");
+        verifyPassword.setText("");
+    }
+}
