@@ -1,0 +1,478 @@
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+
+public class ModuleOne extends JFrame {
+
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    ModuleOne frame = new ModuleOne();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public ModuleOne() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1265, 825);
+
+        cardPanel = new JPanel();
+        cardLayout = new CardLayout();
+        cardPanel.setLayout(cardLayout);
+        getContentPane().add(cardPanel);
+
+        JPanel welcomePanel = new JPanel();
+        cardPanel.add(welcomePanel, "Welcome");
+        welcomePanel.setLayout(null);
+        
+        JButton btnStartModule1 = new JButton("");
+        btnStartModule1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Outline");
+
+        	}
+        });
+        btnStartModule1.setOpaque(false);
+        btnStartModule1.setFocusable(false);
+        btnStartModule1.setFocusPainted(false);
+        btnStartModule1.setContentAreaFilled(false);
+        btnStartModule1.setBorderPainted(false);
+        btnStartModule1.setBounds(507, 475, 270, 78);
+        welcomePanel.add(btnStartModule1);
+        
+        JLabel WelcomeBG = new JLabel("New label");
+        WelcomeBG.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Welcome to Module 1.png"));
+        WelcomeBG.setBounds(0, 0, 1249, 786);
+        welcomePanel.add(WelcomeBG);
+        
+        JPanel OutlineModule1 = new JPanel();
+        cardPanel.add(OutlineModule1, "Outline");
+        OutlineModule1.setLayout(null);
+        
+        JButton BackToM1 = new JButton("");
+        BackToM1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Welcome");
+
+        	}
+        });
+        BackToM1.setOpaque(false);
+        BackToM1.setFocusable(false);
+        BackToM1.setFocusPainted(false);
+        BackToM1.setContentAreaFilled(false);
+        BackToM1.setBorderPainted(false);
+        BackToM1.setBounds(81, 719, 70, 23);
+        OutlineModule1.add(BackToM1);
+        
+        JButton NextRS1 = new JButton("");
+        NextRS1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Regulatory 1");
+
+        		
+        	}
+        });
+        NextRS1.setOpaque(false);
+        NextRS1.setFocusable(false);
+        NextRS1.setFocusPainted(false);
+        NextRS1.setContentAreaFilled(false);
+        NextRS1.setBorderPainted(false);
+        NextRS1.setBounds(1126, 719, 70, 23);
+        OutlineModule1.add(NextRS1);
+        
+        JLabel OutlineRS = new JLabel("New label");
+        OutlineRS.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs Outline.png"));
+        OutlineRS.setBounds(0, 0, 1249, 786);
+        OutlineModule1.add(OutlineRS);
+        
+    
+
+        JPanel RegulatoryS1 = new JPanel();
+        cardPanel.add(RegulatoryS1, "Regulatory 1");
+        RegulatoryS1.setLayout(null);
+        
+        JButton btnNext = new JButton("");
+        btnNext.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Regulatory 2");
+
+        	}
+        });
+        btnNext.setOpaque(false);
+        btnNext.setFocusable(false);
+        btnNext.setFocusPainted(false);
+        btnNext.setContentAreaFilled(false);
+        btnNext.setBorderPainted(false);
+        btnNext.setBounds(1123, 716, 58, 23);
+        RegulatoryS1.add(btnNext);
+        
+        JButton BackToStart = new JButton("");
+        BackToStart.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Welcome");
+        		
+        	}
+        });
+        BackToStart.setOpaque(false);
+        BackToStart.setFocusable(false);
+        BackToStart.setFocusPainted(false);
+        BackToStart.setContentAreaFilled(false);
+        BackToStart.setBorderPainted(false);
+        BackToStart.setBounds(85, 716, 58, 23);
+        RegulatoryS1.add(BackToStart);
+        
+        JLabel lblRegSign = new JLabel("New label");
+        lblRegSign.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs (1).png"));
+        lblRegSign.setBounds(0, 0, 1249, 786);
+        RegulatoryS1.add(lblRegSign);
+
+
+        // Add the rest of the sign panels in a similar way
+
+        JPanel RegulatoryS2 = new JPanel();
+        cardPanel.add(RegulatoryS2, "Regulatory 2");
+        RegulatoryS2.setLayout(null);
+        
+        JButton BackToRS1 = new JButton("");
+        BackToRS1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Regulatory 1");
+
+        	}
+        });
+        BackToRS1.setOpaque(false);
+        BackToRS1.setFocusable(false);
+        BackToRS1.setFocusPainted(false);
+        BackToRS1.setContentAreaFilled(false);
+        BackToRS1.setBorderPainted(false);
+        BackToRS1.setBounds(76, 723, 89, 23);
+        RegulatoryS2.add(BackToRS1);
+        
+        JButton NextRS = new JButton("");
+        NextRS.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+    		
+            cardLayout.show(cardPanel, "Regulatory 3");
+
+    	}
+    });
+    	NextRS.setOpaque(false);
+    	NextRS.setFocusable(false);
+    	NextRS.setFocusPainted(false);
+    	NextRS.setContentAreaFilled(false);
+    	NextRS.setBorderPainted(false);
+    	NextRS.setBounds(1111, 723, 89, 23);
+        RegulatoryS2.add(NextRS);
+        
+        JLabel ContentRS2 = new JLabel("New label");
+        ContentRS2.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 1.png"));
+        ContentRS2.setBounds(0, 0, 1249, 786);
+        RegulatoryS2.add(ContentRS2);
+
+        
+        JPanel RegulatoryS3 = new JPanel();
+        cardPanel.add(RegulatoryS3, "Regulatory 3");
+        RegulatoryS3.setLayout(null);
+        
+        JButton BackToRS2 = new JButton("");
+        BackToRS2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Regulatory 2");
+
+        		
+        	}
+        });
+        BackToRS2.setOpaque(false);
+        BackToRS2.setFocusable(false);
+        BackToRS2.setFocusPainted(false);
+        BackToRS2.setContentAreaFilled(false);
+        BackToRS2.setBorderPainted(false);
+        BackToRS2.setBounds(71, 723, 89, 23);
+        RegulatoryS3.add(BackToRS2);
+        
+        JButton NextRS4 = new JButton("");
+        NextRS4.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Regulatory 5");
+
+        	}
+        });
+        
+        NextRS4.setOpaque(false);
+        NextRS4.setFocusable(false);
+        NextRS4.setFocusPainted(false);
+        NextRS4.setContentAreaFilled(false);
+        NextRS4.setBorderPainted(false);
+        NextRS4.setBounds(1109, 723, 89, 23);
+        RegulatoryS3.add(NextRS4);
+        
+        JLabel ContentRS3 = new JLabel("New label");
+        ContentRS3.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 3.png"));
+        ContentRS3.setBounds(0, 0, 1249, 786);
+        RegulatoryS3.add(ContentRS3);
+        
+        JPanel RegulatoryS4 = new JPanel();
+        cardPanel.add(RegulatoryS4, "Regulatory 4");
+        RegulatoryS4.setLayout(null);
+        
+        JButton BacktoRS3 = new JButton("");
+        BacktoRS3.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		  cardLayout.show(cardPanel, "Regulatory 3");
+        		
+        	}
+        });
+        BacktoRS3.setOpaque(false);
+        BacktoRS3.setFocusable(false);
+        BacktoRS3.setFocusPainted(false);
+        BacktoRS3.setContentAreaFilled(false);
+        BacktoRS3.setBorderPainted(false);
+        BacktoRS3.setBounds(81, 719, 89, 23);
+        RegulatoryS4.add(BacktoRS3);
+        
+        JButton NextRS5 = new JButton("Next");
+        NextRS5.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+      		  cardLayout.show(cardPanel, "Regulatory 6");
+
+        	}
+        });
+        
+        NextRS5.setOpaque(false);
+        NextRS5.setFocusable(false);
+        NextRS5.setFocusPainted(false);
+        NextRS5.setContentAreaFilled(false);
+        NextRS5.setBorderPainted(false);
+        NextRS5.setBounds(1109, 719, 89, 23);
+        RegulatoryS4.add(NextRS5);
+        
+        JLabel ContentRS4 = new JLabel("");
+        ContentRS4.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 4.png"));
+        ContentRS4.setBounds(0, 0, 1249, 786);
+        RegulatoryS4.add(ContentRS4);
+        
+        JPanel RegulatoryS5 = new JPanel();
+        cardPanel.add(RegulatoryS5, "Regulatory 5");
+        RegulatoryS5.setLayout(null);
+        
+        JButton BacktToRS4 = new JButton("");
+        BacktToRS4.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		  cardLayout.show(cardPanel, "Regulatory 4");
+
+        	}
+        });
+        BacktToRS4.setOpaque(false);
+        BacktToRS4.setFocusable(false);
+        BacktToRS4.setFocusPainted(false);
+        BacktToRS4.setContentAreaFilled(false);
+        BacktToRS4.setBorderPainted(false);
+        BacktToRS4.setBounds(62, 714, 89, 23);
+        RegulatoryS5.add(BacktToRS4);
+        
+        JButton NextRS6 = new JButton("");
+        NextRS6.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		cardLayout.show(cardPanel, "Regulatory 6");
+
+        	}
+        });
+        NextRS6.setOpaque(false);
+        NextRS6.setFocusable(false);
+        NextRS6.setFocusPainted(false);
+        NextRS6.setContentAreaFilled(false);
+        NextRS6.setBorderPainted(false);
+        NextRS6.setBounds(1107, 714, 89, 23);
+        RegulatoryS5.add(NextRS6);
+        
+        JLabel ContentRS5 = new JLabel("New label");
+        ContentRS5.setIcon(new ImageIcon("C\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 5.png"));
+        ContentRS5.setBounds(0, 0, 1249, 786);
+        RegulatoryS5.add(ContentRS5);
+        
+        JPanel RegulatoryS6 = new JPanel();
+        cardPanel.add(RegulatoryS6, "Regulatory 6");
+        RegulatoryS6.setLayout(null);
+        
+        JButton BackToRS5 = new JButton("");
+        BackToRS5.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+      		  cardLayout.show(cardPanel, "Regulatory 5");
+
+        		
+        	}
+        });
+        BackToRS5.setOpaque(false);
+        BackToRS5.setFocusable(false);
+        BackToRS5.setFocusPainted(false);
+        BackToRS5.setContentAreaFilled(false);
+        BackToRS5.setBorderPainted(false);
+        BackToRS5.setBounds(87, 716, 55, 23);
+        RegulatoryS6.add(BackToRS5);
+        
+        JButton NextRs7 = new JButton("");
+        NextRs7.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		  cardLayout.show(cardPanel, "Regulatory 7");
+
+        	}
+        });
+        NextRs7.setBounds(1132, 716, 55, 23);
+        NextRs7.setOpaque(false);
+        NextRs7.setFocusable(false);
+        NextRs7.setFocusPainted(false);
+        NextRs7.setContentAreaFilled(false);
+        NextRs7.setBorderPainted(false);
+        RegulatoryS6.add(NextRs7);
+        
+        JLabel ContentRS6 = new JLabel("New label");
+        ContentRS6.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 6.png"));
+        ContentRS6.setBounds(0, 0, 1249, 775);
+        RegulatoryS6.add(ContentRS6);
+        
+        JPanel RegulatoryS7 = new JPanel();
+        cardPanel.add(RegulatoryS7, "Regulatory 7");
+        
+        JButton BacktToRS6 = new JButton("");
+        BacktToRS6.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+      		  cardLayout.show(cardPanel, "Regulatory 6");
+
+        	}
+        });
+        BacktToRS6.setOpaque(false);
+        BacktToRS6.setFocusable(false);
+        BacktToRS6.setFocusPainted(false);
+        BacktToRS6.setContentAreaFilled(false);
+        BacktToRS6.setBorderPainted(false);
+        
+        JButton NextRS8 = new JButton("");
+        
+        NextRS8.setOpaque(false);
+        NextRS8.setFocusable(false);
+        NextRS8.setFocusPainted(false);
+        NextRS8.setContentAreaFilled(false);
+        NextRS8.setBorderPainted(false);
+        
+        JLabel lblNewLabel = new JLabel("");
+        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 7.png"));
+        
+        RegulatoryS7.setLayout(null);
+        
+        JButton BackToRS6 = new JButton("");
+        BackToRS6.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		  cardLayout.show(cardPanel, "Regulatory 6");
+
+        	}
+        });
+        BackToRS6.setOpaque(false);
+        BackToRS6.setFocusable(false);
+        BackToRS6.setFocusPainted(false);
+        BackToRS6.setContentAreaFilled(false);
+        BackToRS6.setBorderPainted(false);
+        BackToRS6.setBounds(83, 718, 55, 23);
+        RegulatoryS7.add(BackToRS6);
+        
+        JButton NextQuiz = new JButton("");
+        NextQuiz.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+      		  cardLayout.show(cardPanel, "ToQuiz");
+
+        		
+        	}
+        });
+        NextQuiz.setOpaque(false);
+        NextQuiz.setFocusable(false);
+        NextQuiz.setFocusPainted(false);
+        NextQuiz.setContentAreaFilled(false);
+        NextQuiz.setBorderPainted(false);
+        NextQuiz.setBounds(1132, 718, 55, 23);
+        RegulatoryS7.add(NextQuiz);
+        
+        JLabel lblNewLabel_1 = new JLabel("New label");
+        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\National University\\Desktop\\srs\\MyPortfolio\\src\\Regulatory Signs 8.png"));
+        lblNewLabel_1.setBounds(0, 0, 1249, 786);
+        RegulatoryS7.add(lblNewLabel_1);
+        
+        JPanel ToQuiz = new JPanel();
+        cardPanel.add(ToQuiz, "ToQuiz");
+        ToQuiz.setLayout(null);
+        
+        JButton BackToRS7 = new JButton("BACK");
+        BackToRS7.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		
+        		  cardLayout.show(cardPanel, "Regulatory 7");
+
+        	}
+        });
+        BackToRS7.setBounds(36, 711, 74, 45);
+        ToQuiz.add(BackToRS7);
+        
+      
+        JButton ToQuizbtn = new JButton("");
+        ToQuizbtn.setOpaque(false);
+        ToQuizbtn.setFocusable(false);
+        ToQuizbtn.setFocusPainted(false);
+        ToQuizbtn.setContentAreaFilled(false);
+        ToQuizbtn.setBorderPainted(false);
+        
+        ToQuizbtn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		 QuizOne frame = new QuizOne();
+        		 frame.setVisible(true);
+
+                 dispose();
+        		
+        	 
+        	}
+        });
+        ToQuizbtn.setBounds(531, 461, 224, 104);
+        ToQuiz.add(ToQuizbtn);
+        
+        JLabel QuizBG = new JLabel("BACK");
+        QuizBG.setFont(new Font("Agency FB", Font.BOLD, 16));
+        QuizBG.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Welcome To Quiz 1.png"));
+        QuizBG.setBounds(0, 0, 1249, 786);
+        ToQuiz.add(QuizBG);ToQuiz.add(QuizBG);
+        // Add the remaining sign panels in a similar way
+
+        // Set the initial panel to show
+        cardLayout.show(cardPanel, "Welcome");
+    }
+}
