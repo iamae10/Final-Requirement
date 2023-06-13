@@ -1,0 +1,414 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class DashboardTry {
+    private JFrame frame;
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+
+    public static void main (String args []) {
+    	DashboardTry example = new DashboardTry();
+        example.createAndShowGUI();
+    }
+
+    public void createAndShowGUI() {
+        frame = new JFrame("Dashboard Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create cardPanel to hold different panels
+        cardPanel = new JPanel();
+        cardLayout = new CardLayout();
+        cardPanel.setLayout(cardLayout);
+
+        // Create and add panels for each button
+        
+        JPanel dashboardPanel = new JPanel();
+        cardPanel.add(dashboardPanel, "Dashboard");
+        dashboardPanel.setLayout(null);
+        
+        JButton profileBtn_dashboard = new JButton("");
+        profileBtn_dashboard.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Profile");              
+
+        	}
+        });
+        profileBtn_dashboard.setOpaque(false);
+        profileBtn_dashboard.setFocusable(false);
+        profileBtn_dashboard.setFocusPainted(false);
+        profileBtn_dashboard.setContentAreaFilled(false);
+        profileBtn_dashboard.setBorderPainted(false);
+        profileBtn_dashboard.setBounds(31, 295, 155, 23);
+        dashboardPanel.add(profileBtn_dashboard);
+        
+        JButton modulesBtn_dashboard = new JButton("");
+        modulesBtn_dashboard.addActionListener(new ActionListener () { 
+        	public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Modules");              
+            }
+        });
+        modulesBtn_dashboard.setOpaque(false);
+        modulesBtn_dashboard.setFocusable(false);
+        modulesBtn_dashboard.setFocusPainted(false);
+        modulesBtn_dashboard.setContentAreaFilled(false);
+        modulesBtn_dashboard.setBorderPainted(false);
+        modulesBtn_dashboard.setBounds(31, 355, 144, 23);
+        dashboardPanel.add(modulesBtn_dashboard);
+        
+        JButton quizzesBtn_dashboard = new JButton("");
+        quizzesBtn_dashboard.addActionListener(new ActionListener () { 
+        	public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Quizzes");              
+            }
+        });
+        quizzesBtn_dashboard.setOpaque(false);
+        quizzesBtn_dashboard.setFocusable(false);
+        quizzesBtn_dashboard.setFocusPainted(false);
+        quizzesBtn_dashboard.setContentAreaFilled(false);
+        quizzesBtn_dashboard.setBorderPainted(false);
+        quizzesBtn_dashboard.setBounds(31, 416, 144, 23);
+        dashboardPanel.add(quizzesBtn_dashboard);
+        
+        JButton aboutBtn_dashboard = new JButton("");
+        aboutBtn_dashboard.addActionListener(new ActionListener () { 
+        	public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "About");              
+            }
+        });
+        aboutBtn_dashboard.setOpaque(false);
+        aboutBtn_dashboard.setFocusable(false);
+        aboutBtn_dashboard.setFocusPainted(false);
+        aboutBtn_dashboard.setContentAreaFilled(false);
+        aboutBtn_dashboard.setBorderPainted(false);
+        aboutBtn_dashboard.setBounds(31, 470, 138, 23);
+        dashboardPanel.add(aboutBtn_dashboard);
+        
+        JLabel DashboardBg = new JLabel("");
+        DashboardBg.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Dashboard - 3.png"));
+        DashboardBg.setBounds(0, 0, 1248, 786);
+        dashboardPanel.add(DashboardBg);
+        
+        JPanel profilePanel = new JPanel();
+        profilePanel.setLayout(null);
+        cardPanel.add(profilePanel, "Profile");
+        
+        JPanel modulesPanel = new JPanel();
+        modulesPanel.setLayout(null);
+        cardPanel.add(modulesPanel, "Modules");
+        
+        JPanel quizzesPanel = new JPanel();
+        quizzesPanel.setLayout(null);
+        cardPanel.add(quizzesPanel, "Quizzes");
+           
+        JPanel aboutPanel = new JPanel();
+        
+        aboutPanel.setLayout(null);
+        cardPanel.add(aboutPanel, "About");
+        
+        JButton btnBack = new JButton("");
+        btnBack.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Dashboard");
+
+        	}
+        });
+        btnBack.setOpaque(false);
+        btnBack.setFocusable(false);
+        btnBack.setFocusPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setBorderPainted(false);
+        btnBack.setBounds(1149, 21, 89, 60);
+        aboutPanel.add(btnBack);
+        
+        JLabel label = new JLabel("About Content");
+        label.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\About.png"));
+        label.setBounds(0, 0, 1248, 786);
+        aboutPanel.add(label);
+        
+                // Create buttons
+                JButton profileButton = new JButton("");
+                profileButton.setOpaque(false);
+                profileButton.setFocusable(false);
+                profileButton.setFocusPainted(false);
+                profileButton.setContentAreaFilled(false);
+                profileButton.setBorderPainted(false);
+                profileButton.setBounds(33, 291, 155, 23);
+                profilePanel.add(profileButton);
+                
+                JButton modulesButton = new JButton("");
+                modulesButton.setOpaque(false);
+                modulesButton.setFocusable(false);
+                modulesButton.setFocusPainted(false);
+                modulesButton.setContentAreaFilled(false);
+                modulesButton.setBorderPainted(false);
+                modulesButton.setBounds(33, 351, 144, 23);
+                profilePanel.add(modulesButton);
+                
+                JButton quizzesButton = new JButton("");
+                quizzesButton.setOpaque(false);
+                quizzesButton.setFocusable(false);
+                quizzesButton.setFocusPainted(false);
+                quizzesButton.setContentAreaFilled(false);
+                quizzesButton.setBorderPainted(false);
+                quizzesButton.setBounds(33, 412, 144, 23);
+                profilePanel.add(quizzesButton);
+                
+                JButton aboutButton = new JButton("");
+                aboutButton.setOpaque(false);
+                aboutButton.setFocusable(false);
+                aboutButton.setFocusPainted(false);
+                aboutButton.setContentAreaFilled(false);
+                aboutButton.setBorderPainted(false);
+                aboutButton.setBounds(33, 466, 138, 23);
+                profilePanel.add(aboutButton);
+                
+                JButton dashboardBtn_profile = new JButton("");
+                dashboardBtn_profile.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		
+                        cardLayout.show(cardPanel, "Dashboard");
+
+                	}
+                });
+                
+                dashboardBtn_profile.setOpaque(false);
+                dashboardBtn_profile.setFocusable(false);
+                dashboardBtn_profile.setFocusPainted(false);
+                dashboardBtn_profile.setContentAreaFilled(false);
+                dashboardBtn_profile.setBorderPainted(false);
+                dashboardBtn_profile.setBounds(33, 234, 155, 23);
+                profilePanel.add(dashboardBtn_profile);
+                
+                JLabel ProfileBackground = new JLabel("");
+                ProfileBackground.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Profile - 4.png"));
+                ProfileBackground.setBounds(-11, 0, 1259, 784);
+                profilePanel.add(ProfileBackground);
+
+                
+                        aboutButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                cardLayout.show(cardPanel, "About");
+                                
+                                aboutPanel.setVisible(true);
+
+                            }
+                        });
+                
+                        quizzesButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                cardLayout.show(cardPanel, "Quizzes");
+                                
+                            }
+                        });
+                
+                        modulesButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                cardLayout.show(cardPanel, "Modules");
+                            }
+                        });
+                
+                        // Add action listeners to buttons
+                        /*profileButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                cardLayout.show(cardPanel, "Profile");
+                                
+
+                            }
+                        });*/
+
+       
+        
+         //BUTTONS IN MODULE FRAME
+        JButton profileBtn_module = new JButton("");
+        profileBtn_module.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {	
+                cardLayout.show(cardPanel, "Profile");		
+        	}
+        });
+        profileBtn_module.setOpaque(false);
+        profileBtn_module.setFocusable(false);
+        profileBtn_module.setFocusPainted(false);
+        profileBtn_module.setContentAreaFilled(false);
+        profileBtn_module.setBorderPainted(false);
+        profileBtn_module.setBounds(33, 295, 155, 23);
+        modulesPanel.add(profileBtn_module);
+ 
+        JButton quizzesBtn_module = new JButton("");
+        quizzesBtn_module.addActionListener(new ActionListener () { 
+        	public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Quizzes");              
+            }
+        });
+        quizzesBtn_module.setOpaque(false);
+        quizzesBtn_module.setFocusable(false);
+        quizzesBtn_module.setFocusPainted(false);
+        quizzesBtn_module.setContentAreaFilled(false);
+        quizzesBtn_module.setBorderPainted(false);
+        quizzesBtn_module.setBounds(33, 413, 144, 23);
+        modulesPanel.add(quizzesBtn_module);
+        
+        JButton aboutBtn_module = new JButton("");
+        aboutBtn_module.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "About");        
+            }
+        });
+        aboutBtn_module.setOpaque(false);
+        aboutBtn_module.setFocusable(false);
+        aboutBtn_module.setFocusPainted(false);
+        aboutBtn_module.setContentAreaFilled(false);
+        aboutBtn_module.setBorderPainted(false);
+        aboutBtn_module.setBounds(33, 466, 138, 23);
+        modulesPanel.add(aboutBtn_module);
+        
+        JButton dashboardBtn_modules = new JButton("");
+        dashboardBtn_modules.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Dashboard");
+
+        	}
+        });
+        dashboardBtn_modules.setOpaque(false);
+        dashboardBtn_modules.setFocusable(false);
+        dashboardBtn_modules.setFocusPainted(false);
+        dashboardBtn_modules.setContentAreaFilled(false);
+        dashboardBtn_modules.setBorderPainted(false);
+        dashboardBtn_modules.setBounds(45, 235, 178, 23);
+        modulesPanel.add(dashboardBtn_modules);
+        
+        JButton GoToM1_btn = new JButton("");
+        GoToM1_btn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		ModuleOne M1frame = new ModuleOne();
+        		M1frame.setVisible(true);
+        
+        		
+        	}
+        });
+        GoToM1_btn.setOpaque(false);
+        GoToM1_btn.setFocusable(false);
+        GoToM1_btn.setFocusPainted(false);
+        GoToM1_btn.setContentAreaFilled(false);
+        GoToM1_btn.setBorderPainted(false);
+        GoToM1_btn.setBounds(388, 333, 310, 75);
+        modulesPanel.add(GoToM1_btn);
+        
+        JLabel ModuleBackground = new JLabel("Modules Content");
+        ModuleBackground.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Modules - 5.png"));
+        ModuleBackground.setBounds(0, 0, 1248, 786);
+        modulesPanel.add(ModuleBackground);
+
+        //buttons in quiz panel
+        JButton profileBtn_quiz = new JButton("");   
+        profileBtn_quiz.setBounds(38, 295, 155, 23);
+        profileBtn_quiz.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Profile");
+
+        	}
+        });
+        profileBtn_quiz.setOpaque(false);
+        profileBtn_quiz.setFocusable(false);
+        profileBtn_quiz.setFocusPainted(false);
+        profileBtn_quiz.setContentAreaFilled(false);
+        profileBtn_quiz.setBorderPainted(false);
+        quizzesPanel.add(profileBtn_quiz);
+        
+        JButton modulesBtn_quiz = new JButton("");
+        modulesBtn_quiz.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+                cardLayout.show(cardPanel, "Modules");
+
+        	}
+        });
+        modulesBtn_quiz.setOpaque(false);
+        modulesBtn_quiz.setFocusable(false);
+        modulesBtn_quiz.setFocusPainted(false);
+        modulesBtn_quiz.setContentAreaFilled(false);
+        modulesBtn_quiz.setBorderPainted(false);
+        modulesBtn_quiz.setBounds(38, 346, 144, 23);
+        quizzesPanel.add(modulesBtn_quiz);
+        
+        JButton aboutBtn_quiz = new JButton("");
+        aboutBtn_quiz.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		 cardLayout.show(cardPanel, "About");
+        	}
+        });
+        aboutBtn_quiz.setOpaque(false);
+        aboutBtn_quiz.setFocusable(false);
+        aboutBtn_quiz.setFocusPainted(false);
+        aboutBtn_quiz.setContentAreaFilled(false);
+        aboutBtn_quiz.setBorderPainted(false);
+        aboutBtn_quiz.setBounds(33, 468, 138, 23);
+        quizzesPanel.add(aboutBtn_quiz);
+        
+        JButton dashboardBtn_quizzes = new JButton("");
+        dashboardBtn_quizzes.addActionListener(new ActionListener() {    
+        	public void actionPerformed(ActionEvent e) {
+        		
+       		 cardLayout.show(cardPanel, "Dashboard");
+
+        		
+        	}
+        });
+        dashboardBtn_quizzes.setOpaque(false);
+        dashboardBtn_quizzes.setFocusable(false);
+        dashboardBtn_quizzes.setFocusPainted(false);
+        dashboardBtn_quizzes.setContentAreaFilled(false);
+        dashboardBtn_quizzes.setBorderPainted(false);
+        dashboardBtn_quizzes.setBounds(38, 238, 155, 23);
+        quizzesPanel.add(dashboardBtn_quizzes);
+        
+        JButton LevelOneBtn = new JButton("");
+        LevelOneBtn.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+  
+                     QuizOne frame = new QuizOne();
+                     frame.setVisible(true);
+
+                     // Get the parent frame of the button and dispose it
+                     JFrame parentFrame = (JFrame) SwingUtilities.getRoot((Component) e.getSource());
+                     parentFrame.dispose();
+              
+        	}
+        });
+        LevelOneBtn.setOpaque(false);
+        LevelOneBtn.setFocusable(false);
+        LevelOneBtn.setFocusPainted(false);
+        LevelOneBtn.setContentAreaFilled(false);
+        LevelOneBtn.setBorderPainted(false);
+        LevelOneBtn.setBounds(419, 346, 269, 54);
+        quizzesPanel.add(LevelOneBtn);
+        
+        JLabel QuizBackground = new JLabel("");
+        QuizBackground.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\Quizzes - 6.png"));
+        QuizBackground.setBounds(0, 0, 1248, 786);
+        quizzesPanel.add(QuizBackground);
+
+        // Add buttons to the frame
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(1, 4));
+
+        // Add cardPanel and buttonPanel to the frame
+        frame.getContentPane().add(cardPanel, BorderLayout.CENTER);
+        frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+
+        // Set frame size and visibility
+        frame.setSize(1264, 825);
+        frame.setVisible(true);
+    }
+}
