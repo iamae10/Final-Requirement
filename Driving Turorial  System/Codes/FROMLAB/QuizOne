@@ -1,0 +1,501 @@
+
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class  QuizOne extends Login {
+    private JPanel contentPane;
+    private JScrollPane scrollPane;
+    private JPanel questionPanel;
+    private JButton submitButton;
+    private JButton tryAgainButton;
+    private JLabel scoreLabel;
+    
+    
+    private int score;
+    private JLabel lblNewLabel;
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                	QuizOne frame = new QuizOne();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+  
+    public QuizOne() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(0, 0, 1265, 825);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        scrollPane = new JScrollPane();
+        scrollPane.setBounds(125, 60, 1000, 650);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setOpaque(false); // Set the scroll pane background transparent
+
+        contentPane.add(scrollPane);
+
+        questionPanel = new JPanel();
+        questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.Y_AXIS));
+        questionPanel.setOpaque(false);
+
+        // Add questions with answer choices
+        
+        //First Question
+        addQuestion("1. The minimum age for applying for a Non-Professional Driver’s License is:",
+                "a. 18 years old",
+                "b. 16 years old",
+                "c. 17 years old"); //17 is the answer
+        
+        addQuestion("2. The three colors of the traffic lights are:",
+                "a. red, green and yellow", // red, green, and yellow - answer
+                "b. red, green and blue",
+                "c. yellow, green and blue");
+        
+        addQuestion("3. While driving, you should look at your side and rear view mirror:",
+                "a. Quickly", // Quickly is the answer
+                "b. If you want", 
+                "c. Not less than once per one minute");
+
+        addQuestion("4. You can overtake on the right side of your vehicle if:",
+                "a. The road has two or more lanes going in one direction", //two or more lanes
+                "b. The road is two-way",
+                "c. The sidewalk is wide");
+
+        addQuestion("5. A person who drives while under the influence of alcohol or drugs is punishable by law with:",
+                "a. Suspension of license",
+                "b. Fines and imprisonment",
+                "c. All answers correct"); // all answers letter c
+
+        addQuestion("6. Before leaving the parking area, you should:",
+                "a. Look around first", // a is the naswer
+                "b. Sound your horn",
+                "c. Immediately go");
+        
+        addQuestion("7. In an intersection with a STOP sign, you should:",
+                "a. Slow down and proceed if there is no danger",
+                "b. Stop and proceed if there is no danger", // b is the answer
+                "c. Give way to vehicles going from left and right, proceed if there is no danger");
+        
+        addQuestion("8. Obtaining a driver’s license is:",
+        		"a. An honor",
+        		"b. A privilege", // it is a privilege
+        		"c. A right");
+        
+        addQuestion("9. A Non-Professional driver’s license is suited for:",
+        		"a. Private vehicles", // private only
+        		"b. Public utility vehicles",
+        		"c. All types of vehicles");
+        
+        addQuestion("10. When parking uphill and parallel to the sidewalk, you should turn the wheel:",
+        		"a. To the sidewalk curb",
+        		"b. Away from the sidewalk curb", // Away from the sidewalk curb - answer
+        		"c. Parallel with the sidewalk curb");
+        
+        addQuestion("11. What is the meaning of blinking red traffic light?",
+        		"a. Wait for the green signal",
+        		"b. Slow down and proceed if there is no danger ahead", 
+        		"c. Stop and proceed if there is no danger ahead"); // stop and proceed c is the answer
+        
+        addQuestion("12. What should you do before turning left or right?)",
+        		"a. Immediately turn and sound your horn",
+        		"b. Give signal not less than 30 meters before turning", //  B is the answer
+        		"c. Ignore giving a signal"); 
+        
+        addQuestion("13. You can overtake in a highway if it has two lanes with:",
+        		"a. Continuous white line",
+        		"b. Broken yellow line", // broken line is the answer
+        		"c. Continuous yellow line"); 
+        
+        addQuestion("14. You are not allowed to overtake at the foot bridge because:",
+        		"a. People are crossing",
+        		"b. You cannot see oncoming vehicles", // b is the answer 
+        		"c. The bridge is narrow"); 
+        
+        addQuestion("15. If you are approaching a curve, what should you do?",
+        		"a. Slow down", // slow down
+        		"b. Speed up", 
+        		"c. Abruptly push the brake"); 
+        
+        addQuestion("16. What is the meaning of a triangle traffic sign with red border color?",
+        		"a. Reminder sign", // Warning sign is the answer
+        		"b. Warning sign", 
+        		"c. Information sign"); 
+        
+        addQuestion("17. What is the meaning of a square or rectangle traffic sign with blue and white color?",
+        		"a. Giving direction", 
+        		"b. Warning sign", 
+        		"c. Information sign"); // Information sign
+        
+        addQuestion("18. What is the meaning of green traffic light?",
+        		"a. Go signal for the vehicle",  // A
+        		"b. Stop at the given line", 
+        		"c. You are allowed to proceed by slowing down");
+        
+        addQuestion("19. Broken white line on the road means)",
+        		"a. You are allowed to overtake on left or right side if there is no danger",  // a
+        		"b. It is prohibited to overtake on the left side", 
+        		"c. It is prohibited to overtake on the right side");
+        
+        addQuestion("20. A driver should give a signal when turning left or right on the road intersection in no less than:",
+        		"a. 15 meters", 
+        		"b. 60 meters", 
+        		"c. 30 meters"); // C
+        
+        addQuestion("21. What is the meaning of a square or rectangle traffic sign with blue and white color?",
+        		"a. Giving direction", 
+        		"b. Warning sign", 
+        		"c. Information sign"); //c
+        
+        addQuestion("22. If you are caught due to a violation, how many days are given for you to settle your case and get your license back?",
+        		"a. 30 days", 
+        		"b. 15 days",  //b is the answer
+        		"c. 10 days");
+        
+        addQuestion("23. Which of the following describes the picture:",
+        		"a. No entry", 
+        		"b. Give way",  // no answer, since the picture is not inserted
+        		"c. Stop");
+        
+        addQuestion("24. If you are going to drive slow on expressway, you should move on the:",
+        		"a. Middle lane", 
+        		"b. Right lane",  //b is the answer
+        		"c. Left lane");
+        
+        addQuestion("25. What should you do if the vehicle behind you wants to overtake your vehicle?",
+        		"a. Stay on the right and stop", 
+        		"b. Slow down, stay on the right, and let it overtake",  // b is the answer
+        		"c. Sound your horn and let it pass");
+        
+        addQuestion("26. You are not allowed to cross a lane with continuous yellow line on the road except if you are:",
+        		"a. Turning left",  // a is the answer
+        		"b. Turning right", 
+        		"c. Changing lanes");
+        
+        addQuestion("27. After overtaking, you want to safely go back to the lane where you where you came from, you should: ",
+        		" a. Use the rear view mirror to check the vehicle you have overtaken", // a is the answer
+        		" b. Look at the vehicle you have overtaken by turning your head", 
+        		" c. Stop");
+        
+        addQuestion("28. If you are near a pedestrian crossing and there are people waiting to cross the road, you should: ",
+        		"a. Slow down, press horn and proceed", 
+        		"b. Press horn and proceed", 
+        		"c. Stop the vehicle, wait until pedestrians cross and then move forward"); //c is the answer
+        
+        addQuestion("29. You are coming towards a narrow bridge and another vehicle is about to enter the bridge from the other side. What should you do?",
+        		"a. Wait until the other vehicle crosses the bridge before proceeding",  //a is the answer
+        		"b. Switch on headlight and the cross the bridge", 
+        		"c. Increase speed of the vehicle and try to cross the bridge quickly");
+        
+        
+        addQuestion("30.Not following road and traffic rules:",
+        		"a. Saves fuel",  
+        		"b. May engage you in an accident",  //b is the answer
+        		"c. Proves that you are a good driver");
+        
+        addQuestion("31. In a roundabout (rotunda), which has road rights?",
+                "a. The vehicles in the roundabout",   //a is the answer
+        		"b. The vehicles approaching the roundabout",  
+        		"c. The vehicles facing the green light");
+        
+        addQuestion("32. Having a license means you can drive:",
+                "a. Vehicles allowed indicated in your license",   //a is the answer
+        		"b. All types of vehicle",  
+        		"c. Public utility vehicle only");
+        
+        addQuestion("33. When parking uphill and parallel to the sidewalk, you should turn the wheel:",
+                "a. To the sidewalk curb",   
+        		"b. Away from the sidewalk curb",   // b is the answer
+        		"c. Parallel with the sidewalk curb");
+        
+        addQuestion("34. While changing lanes, you should give signal, check your rear view mirror and:",
+                "a. Turn on the vehicle’s headlight",   
+        		"b. Watch out for oncoming vehicles",   // b is the answer
+        		"c. Sound your horn");
+        
+        addQuestion("35. What is the meaning of blinking yellow traffic light?:",
+                "a. Slow down and proceed if there is no danger",   
+        		"b. Stop and wait for the traffic light to change",   // a is the answer
+        		"c. Wait for the green light");
+       
+        addQuestion("36. What is the meaning of yellow arrow traffic light?",
+                "a. The red arrow traffic light is about to light up",   
+        		"b. Allowing vehicles to go left, right or straight",   // a is the answer
+        		"c. Giving signal for right or left direction");
+        
+        addQuestion("37. What is the meaning of yellow traffic light?",
+                "a. Stop",   
+        		"b. Prepare to stop, red traffic light is about to light up",   // b is the answer
+        		"c. You can go, but slow down");
+        
+        addQuestion("38. What are white lines in the road for?",
+                "a. Sign that you can go left or right",   
+        		"b. Separates traffic going in one direction",   // b is the answer
+        		"c. Divides lanes going in one direction");
+        
+        addQuestion("39. Broken white line on the road means:",
+                "a. You are allowed to overtake on left or right side if there is no danger",   
+        		"b. It is prohibited to overtake on the left side",   // a is the answer
+        		"c. It is prohibited to overtake on the right side");
+        
+        addQuestion("40. If a vehicle in front of you has a high beam light which is blinding your vision, what should you do?",
+                "a. Do not look at glaring light, quickly look on the right side of the road",   // a is the answer
+        		"b. Switch your headlight on high also",   
+        		"c. Stare at the glaring light");
+        
+        addQuestion("41. What is the meaning of blinking red traffic light?",
+                "a. Stop at the given line",   
+        		"b. Drive faster",   
+        		"c. Stop for a while and continue if there is no danger"); // c is the answer
+        
+        addQuestion("42. A continuous parallel double yellow line on the road means:",
+                "a. You are allowed to overtake on the right side",   
+        		"b. It is dangerous to overtake",   
+        		"c. You are allowed to overtake on the left side"); // b is the answer
+        
+        addQuestion("43. If the driver of the vehicle in front of you is stretching his left arm out and gives you a hand signal pointing to the left, he will:",
+                "a. Turn left",   
+        		"b. Stop",   
+        		"c. Turn right"); // a is the answer
+
+        
+        addQuestion("44. If the brake light of the vehicle in front of you lights up, you should:",
+                "a. Depress the horn",   
+        		"b. Prepare to push the brake",   
+        		"c. Turn right or left"); // b is the answer
+        
+        
+        addQuestion("45. There are two incoming vehicles on both sides of the street of an intersection with no traffic light, which vehicle should give way?",
+                "a. The last one to arrive",   
+        		"b. The first one to slow down",   
+        		"c. The first one to arrive"); // a is the answer
+        
+        
+        addQuestion("46.The safest speed of a vehicle is according to:",
+                "a. Capability of the driver",   
+        		"b. Condition of the vehicle",   
+        		"c. Road and weather conditions"); // c is the answer
+        
+        addQuestion("47. In which place you are prohibited to park?",
+                "a. In a certain place you want to go",   
+        		"b. In a given parking space",   
+        		"c. In a pedestrian crossing"); // c is the answer
+        
+        addQuestion("48. What should you do when an ambulance comes up behind you flashing red lights and/or sounding its siren?",
+                "a. Speed up so that you don’t hold the ambulance",   
+        		"b. Stop as soon as possible",   
+        		"c. Pull over to the right and slow down or even stop if necessary"); // c is the answer
+        
+        addQuestion("49. What should you do if the vehicle behind you wants to overtake your vehicle?",
+                "a. Sound your horn and let it pass",   
+        		"b. Slow down, stay on the right, and let it overtake",   //b is the answer
+        		"c. Stay on the right and stop");
+        
+        addQuestion("50. If you are caught due to a violation, how many days are given for you to settle your case and get your license back?",
+                "a.	30 days",   
+        		"b. 15 days",   //b is the answer
+        		"c. 10 days");
+        
+        scrollPane.setViewportView(questionPanel);
+
+        submitButton = new JButton("Submit");
+        submitButton.setBounds(5, 724, 1239, 23);
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calculateScore();
+                showScore();
+                proceedToNextModule();
+            }
+        });
+        contentPane.add(submitButton);
+
+        scoreLabel = new JLabel("Score: 0/5");
+        scoreLabel.setBounds(5, 5, 1239, 14);
+        contentPane.add(scoreLabel);
+        
+        tryAgainButton = new JButton("Try Again");
+        tryAgainButton.setBounds(5, 758, 1239, 23);
+        tryAgainButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetQuiz();
+                promptTryAgain();
+            }
+        });
+        tryAgainButton.setEnabled(false); // Initially disabled
+        contentPane.add(tryAgainButton);
+        
+        lblNewLabel = new JLabel("");
+        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\QUIZ SAMPLE.png"));
+        lblNewLabel.setBounds(0, 0, 1249, 781);
+        contentPane.add(lblNewLabel);
+    }
+
+    private void addQuestion(String question, String... choices) {
+        JPanel questionContainer = new JPanel();
+        questionContainer.setLayout(new BoxLayout(questionContainer, BoxLayout.Y_AXIS));
+
+        JLabel questionLabel = new JLabel(question);
+        questionLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        questionContainer.add(questionLabel);
+
+        ButtonGroup answerGroup = new ButtonGroup();
+
+        for (String choice : choices) {
+            JRadioButton radioButton = new JRadioButton(choice);
+            radioButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+            answerGroup.add(radioButton);
+            questionContainer.add(radioButton);
+        }
+
+        questionPanel.add(questionContainer);
+        questionPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    }
+
+    private void calculateScore() {
+        score = 0;
+        Component[] questionContainers = questionPanel.getComponents();
+
+        for (Component questionContainer : questionContainers) {
+            if (questionContainer instanceof JPanel) {
+                ButtonGroup answerGroup = null;
+                Component[] components = ((JPanel) questionContainer).getComponents();
+
+                for (Component component : components) {
+                    if (component instanceof JRadioButton) {
+                        JRadioButton radioButton = (JRadioButton) component;
+                        if (radioButton.isSelected() && isCorrectAnswer(radioButton)) {
+                            score++;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (score < 3) {
+            tryAgainButton.setEnabled(true);
+        } else {
+            tryAgainButton.setEnabled(false);
+        }
+    }
+
+    private void promptTryAgain() {
+            tryAgainButton.setEnabled(true);
+        }
+    
+
+    private boolean isCorrectAnswer(JRadioButton radioButton) {
+        String selectedAnswer = radioButton.getText();
+
+        // Modify the conditions to match the correct answers
+        if (selectedAnswer.equals("c. 17 years old")) { //1
+            return true;
+        } else if (selectedAnswer.equals("a. red, green and yellow")) { //2
+            return true;
+        } else if (selectedAnswer.equals("a. Quickly")) { //3 
+            return true;
+        } else if (selectedAnswer.equals("a. The road has two or more lanes going in one direction")) { //4 
+            return true;
+        } else if (selectedAnswer.equals("c. All answers correct")) { //5
+            return true;
+        } else if (selectedAnswer.equals("a. Look around first")) { //6
+        	return true;
+        } else if (selectedAnswer.equals("b. Stop and proceed if there is no danger")) { //7
+        	return true;
+        } else if (selectedAnswer.equals("b. A privilege")) { //8
+        	return true;
+        } else if (selectedAnswer.equals("a. Private vehicles")) { //9
+        	return true;
+        } else if (selectedAnswer.equals("b. Away from the sidewalk curb")) { // 10
+        	return true;
+        } else if (selectedAnswer.equals("c. Stop and proceed if there is no danger ahead")) { //11
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("b. Give signal not less than 30 meters before turning")) { // 12
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("b. Broken yellow line")) { //13
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("You cannot see oncoming vehicles")) { //14
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("a. Slow down")) { //15
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("a. Reminder sign")) { //16
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("c. Information sign")) { //17
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("a. Go signal for the vehicle")) { //18
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("a. You are allowed to overtake on left or right side if there is no danger")) { //19
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("c. 30 meters")) { //20
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;
+        } else if (selectedAnswer.equals("c. Information sign")) { //21
+            System.out.println("Selected Answer: " + selectedAnswer);
+        	return true;	
+        
+        }
+        return false;
+    }
+
+    private void showScore() {
+        scoreLabel.setText("Score: " + score + "/5");
+        scoreLabel.setForeground(score < 3 ? Color.RED : Color.BLACK);
+    }
+
+    private void proceedToNextModule() {
+        submitButton.setEnabled(false);
+           
+        }
+    
+
+    private void resetQuiz() {
+        // Clear the selected answers
+        Component[] questionContainers = questionPanel.getComponents();
+
+        for (Component questionContainer : questionContainers) {
+            if (questionContainer instanceof JPanel) {
+                Component[] components = ((JPanel) questionContainer).getComponents();
+
+                for (Component component : components) {
+                    if (component instanceof JRadioButton) {
+                        JRadioButton radioButton = (JRadioButton) component;
+                        radioButton.setSelected(false);
+                    }
+                }
+            }
+        }
+
+        // Reset the score and remove red color
+        score = 0;
+        showScore();
+
+        // Enable the submit button
+        submitButton.setEnabled(true);
+
+        // Disable the try again button
+        tryAgainButton.setEnabled(false);
+    }
+}
