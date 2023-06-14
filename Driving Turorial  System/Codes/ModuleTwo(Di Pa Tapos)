@@ -1,0 +1,498 @@
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+
+public class ModuleTwo extends JFrame {
+
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+
+    public ModuleTwo() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1265, 825);
+
+        cardPanel = new JPanel();
+        cardLayout = new CardLayout();
+        cardPanel.setLayout(cardLayout);
+        getContentPane().add(cardPanel);
+        
+        //welcome panel
+        JPanel welcomePanel = new JPanel();
+        cardPanel.add(welcomePanel, "Welcome");
+        welcomePanel.setLayout(null);
+
+        JButton btnStartModule1 = createButton("", welcomePanel, "Outline");
+        btnStartModule1.setBounds(507, 475, 270, 78);
+        btnStartModule1.setOpaque(false);
+        btnStartModule1.setFocusable(false);
+        btnStartModule1.setFocusPainted(false);
+        btnStartModule1.setContentAreaFilled(false);
+        btnStartModule1.setBorderPainted(false);
+        welcomePanel.add(btnStartModule1);
+
+        JLabel WelcomeBG = new JLabel("New label");
+        WelcomeBG.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Welcome to Module 2 (1).png"));
+        WelcomeBG.setBounds(0, 0, 1249, 786);
+        welcomePanel.add(WelcomeBG);
+
+        // Outline Panel
+        JPanel outlineModule1 = new JPanel();
+        cardPanel.add(outlineModule1, "Outline");
+        outlineModule1.setLayout(null);
+
+        JButton backToWelcome = createButton("", outlineModule1, "Welcome");
+        backToWelcome.setBounds(81, 719, 70, 23);
+        backToWelcome.setOpaque(false);
+        backToWelcome.setFocusable(false);
+        backToWelcome.setFocusPainted(false);
+        backToWelcome.setContentAreaFilled(false);
+        backToWelcome.setBorderPainted(false);
+        outlineModule1.add(backToWelcome);
+        
+        JButton nextCheckingMV = createButton("", outlineModule1, "Checking 1");
+        nextCheckingMV.setBounds(1126, 719, 70, 23);
+        nextCheckingMV.setOpaque(false);
+        nextCheckingMV.setFocusable(false);
+        nextCheckingMV.setFocusPainted(false);
+        nextCheckingMV.setContentAreaFilled(false);
+        nextCheckingMV.setBorderPainted(false);
+        outlineModule1.add(nextCheckingMV);
+
+        JLabel outlineFundamentals = new JLabel("New label");
+        outlineFundamentals.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Driving Fundametals Outline.png"));
+        outlineFundamentals.setBounds(0, 0, 1249, 786);
+        outlineModule1.add(outlineFundamentals);
+        
+        // Checking Motor Vehicles and Documents 1 Panel
+        JPanel checkingMV1 = new JPanel();
+        cardPanel.add(checkingMV1, "Checking 1");
+        checkingMV1.setLayout(null);
+
+        JButton backToOutline = createButton("", checkingMV1, "Outline");
+        backToOutline.setBounds(85, 716, 58, 23);
+        backToOutline.setOpaque(false);
+        backToOutline.setFocusable(false);
+        backToOutline.setFocusPainted(false);
+        backToOutline.setContentAreaFilled(false);
+        backToOutline.setBorderPainted(false);
+        checkingMV1.add(backToOutline);
+
+        JButton nexToMV2 = createButton("", checkingMV1, "Checking 2");
+        nexToMV2.setBounds(1123, 716, 58, 23);
+        nexToMV2.setOpaque(false);
+        nexToMV2.setFocusable(false);
+        nexToMV2.setFocusPainted(false);
+        nexToMV2.setContentAreaFilled(false);
+        nexToMV2.setBorderPainted(false);
+        checkingMV1.add(nexToMV2);
+
+        JLabel lblChecking = new JLabel("New label");
+        lblChecking.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents.png"));
+        lblChecking.setBounds(0, 0, 1249, 786);
+        checkingMV1.add(lblChecking);
+        
+        // Checking Motor Vehicles and Documents 2 Panel
+        JPanel checkingMV2 = new JPanel();
+        cardPanel.add(checkingMV2, "Checking 2");
+        checkingMV2.setLayout(null);
+
+        JButton backToMV1 = createButton("", checkingMV2, "Checking 1");
+        backToMV1.setBounds(85, 716, 58, 23);
+        backToMV1.setOpaque(false);
+        backToMV1.setFocusable(false);
+        backToMV1.setFocusPainted(false);
+        backToMV1.setContentAreaFilled(false);
+        backToMV1.setBorderPainted(false);
+        checkingMV2.add(backToMV1);
+
+        JButton nextToMV3 = createButton("", checkingMV2, "Checking 3");
+        nextToMV3.setBounds(1123, 716, 58, 23);
+        nextToMV3.setOpaque(false);
+        nextToMV3.setFocusable(false);
+        nextToMV3.setFocusPainted(false);
+        nextToMV3.setContentAreaFilled(false);
+        nextToMV3.setBorderPainted(false);
+        checkingMV2.add(nextToMV3);
+
+        JLabel lblChecking2 = new JLabel("New label");
+        lblChecking2.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents-1.png"));
+        lblChecking2.setBounds(0, 0, 1249, 786);
+        checkingMV2.add(lblChecking2);
+
+        // Checking Motor Vehicles and Documents 3 Panel
+        JPanel checkingMV3 = new JPanel();
+        cardPanel.add(checkingMV3, "Checking 3");
+        checkingMV3.setLayout(null);
+
+        JButton backToMV2 = createButton("", checkingMV3, "Checking 2");
+        backToMV2.setBounds(85, 716, 58, 23);
+        backToMV2.setOpaque(false);
+        backToMV2.setFocusable(false);
+        backToMV2.setFocusPainted(false);
+        backToMV2.setContentAreaFilled(false);
+        backToMV2.setBorderPainted(false);
+        checkingMV3.add(backToMV2);
+
+        JButton nextToMV4 = createButton("", checkingMV3, "Checking 4");
+        nextToMV4.setBounds(1123, 716, 58, 23);
+        nextToMV4.setOpaque(false);
+        nextToMV4.setFocusable(false);
+        nextToMV4.setFocusPainted(false);
+        nextToMV4.setContentAreaFilled(false);
+        nextToMV4.setBorderPainted(false);
+        checkingMV3.add(nextToMV4);
+
+        JLabel lblChecking3 = new JLabel("New label");
+        lblChecking3.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents-1.png"));
+        lblChecking3.setBounds(0, 0, 1249, 786);
+        checkingMV3.add(lblChecking3);
+        
+        // Checking Motor Vehicles and Documents 4 Panel
+        JPanel checkingMV4 = new JPanel();
+        cardPanel.add(checkingMV4, "Checking 4");
+        checkingMV4.setLayout(null);
+
+        JButton backToMV3 = createButton("", checkingMV4, "Checking 3");
+        backToMV3.setBounds(85, 716, 58, 23);
+        backToMV3.setOpaque(false);
+        backToMV3.setFocusable(false);
+        backToMV3.setFocusPainted(false);
+        backToMV3.setContentAreaFilled(false);
+        backToMV3.setBorderPainted(false);
+        checkingMV4.add(backToMV3);
+
+        JButton nextToMV5 = createButton("", checkingMV4, "Checking 5");
+        nextToMV5.setBounds(1123, 716, 58, 23);
+        nextToMV5.setOpaque(false);
+        nextToMV5.setFocusable(false);
+        nextToMV5.setFocusPainted(false);
+        nextToMV5.setContentAreaFilled(false);
+        nextToMV5.setBorderPainted(false);
+        checkingMV4.add(nextToMV5);
+
+        JLabel lblChecking4 = new JLabel("New label");
+        lblChecking4.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents-2.png"));
+        lblChecking4.setBounds(0, 0, 1249, 786);
+        checkingMV4.add(lblChecking4);
+        
+        // Checking Motor Vehicles and Documents 5 Panel
+        JPanel checkingMV5 = new JPanel();
+        cardPanel.add(checkingMV5, "Checking 5");
+        checkingMV5.setLayout(null);
+
+        JButton backToMV4 = createButton("", checkingMV5, "Checking 4");
+        backToMV4.setBounds(85, 716, 58, 23);
+        backToMV4.setOpaque(false);
+        backToMV4.setFocusable(false);
+        backToMV4.setFocusPainted(false);
+        backToMV4.setContentAreaFilled(false);
+        backToMV4.setBorderPainted(false);
+        checkingMV5.add(backToMV4);
+
+        JButton nextToMV6 = createButton("", checkingMV5, "Checking 6");
+        nextToMV6.setBounds(1123, 716, 58, 23);
+        nextToMV6.setOpaque(false);
+        nextToMV6.setFocusable(false);
+        nextToMV6.setFocusPainted(false);
+        nextToMV6.setContentAreaFilled(false);
+        nextToMV6.setBorderPainted(false);
+        checkingMV5.add(nextToMV6);
+
+        JLabel lblChecking5 = new JLabel("New label");
+        lblChecking5.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents-3.png"));
+        lblChecking5.setBounds(0, 0, 1249, 786);
+        checkingMV5.add(lblChecking5);
+        
+        // Checking Motor Vehicles and Documents 6 Panel
+        JPanel checkingMV6 = new JPanel();
+        cardPanel.add(checkingMV6, "Checking 6");
+        checkingMV6.setLayout(null);
+
+        JButton backToMV5 = createButton("", checkingMV6, "Checking 5");
+        backToMV5.setBounds(85, 716, 58, 23);
+        backToMV5.setOpaque(false);
+        backToMV5.setFocusable(false);
+        backToMV5.setFocusPainted(false);
+        backToMV5.setContentAreaFilled(false);
+        backToMV5.setBorderPainted(false);
+        checkingMV6.add(backToMV5);
+
+        JButton nextToAS1 = createButton("", checkingMV6, "Air Supply 1");
+        nextToAS1.setBounds(1123, 716, 58, 23);
+        nextToAS1.setOpaque(false);
+        nextToAS1.setFocusable(false);
+        nextToAS1.setFocusPainted(false);
+        nextToAS1.setContentAreaFilled(false);
+        nextToAS1.setBorderPainted(false);
+        checkingMV6.add(nextToAS1);
+
+        JLabel lblChecking6 = new JLabel("New label");
+        lblChecking6.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Checking Motor Vehicle and Documents-4.png"));
+        lblChecking6.setBounds(0, 0, 1249, 786);
+        checkingMV6.add(lblChecking6);
+        
+        // Essential Air Supply System 1 Panel
+        JPanel essentialAS1 = new JPanel();
+        cardPanel.add(essentialAS1, "Air Supply 1");
+        essentialAS1.setLayout(null);
+
+        JButton backToMV6 = createButton("", essentialAS1, "Checking 6");
+        backToMV6.setBounds(85, 716, 58, 23);
+        backToMV6.setOpaque(false);
+        backToMV6.setFocusable(false);
+        backToMV6.setFocusPainted(false);
+        backToMV6.setContentAreaFilled(false);
+        backToMV6.setBorderPainted(false);
+        essentialAS1.add(backToMV6);
+
+        JButton nextToAS2 = createButton("", essentialAS1, "Air Supply 2");
+        nextToAS2.setBounds(1123, 716, 58, 23);
+        nextToAS2.setOpaque(false);
+        nextToAS2.setFocusable(false);
+        nextToAS2.setFocusPainted(false);
+        nextToAS2.setContentAreaFilled(false);
+        nextToAS2.setBorderPainted(false);
+        essentialAS1.add(nextToAS2);
+
+        JLabel lblEssential1 = new JLabel("New label");
+        lblEssential1.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Essential Parts of Air Supply System.png"));
+        lblEssential1.setBounds(0, 0, 1249, 786);
+        essentialAS1.add(lblEssential1);
+        
+        // Essential Air Supply System 2 Panel
+        JPanel essentialAS2 = new JPanel();
+        cardPanel.add(essentialAS2, "Air Supply 2");
+        essentialAS2.setLayout(null);
+
+        JButton backToAS1 = createButton("", essentialAS2, "Air Supply 1");
+        backToAS1.setBounds(85, 716, 58, 23);
+        backToAS1.setOpaque(false);
+        backToAS1.setFocusable(false);
+        backToAS1.setFocusPainted(false);
+        backToAS1.setContentAreaFilled(false);
+        backToAS1.setBorderPainted(false);
+        essentialAS2.add(backToAS1);
+
+        JButton nextToDocs = createButton("", essentialAS2, "Documents");
+        nextToDocs.setBounds(1123, 716, 58, 23);
+        nextToDocs.setOpaque(false);
+        nextToDocs.setFocusable(false);
+        nextToDocs.setFocusPainted(false);
+        nextToDocs.setContentAreaFilled(false);
+        nextToDocs.setBorderPainted(false);
+        essentialAS2.add(nextToDocs);
+
+        JLabel lblEssential2 = new JLabel("New label");
+        lblEssential2.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Essential Parts of Air Supply System - 1.png"));
+        lblEssential2.setBounds(0, 0, 1249, 786);
+        essentialAS2.add(lblEssential2);
+        
+        // Documents Panel
+        JPanel documents = new JPanel();
+        cardPanel.add(documents, "Documents");
+        documents.setLayout(null);
+
+        JButton backToAS2 = createButton("", documents, "Air Supply 2");
+        backToAS2.setBounds(85, 716, 58, 23);
+        backToAS2.setOpaque(false);
+        backToAS2.setFocusable(false);
+        backToAS2.setFocusPainted(false);
+        backToAS2.setContentAreaFilled(false);
+        backToAS2.setBorderPainted(false);
+        documents.add(backToAS2);
+
+        JButton nextToBSD1 = createButton("", documents, "Starting and Driving 1");
+        nextToBSD1.setBounds(1123, 716, 58, 23);
+        nextToBSD1.setOpaque(false);
+        nextToBSD1.setFocusable(false);
+        nextToBSD1.setFocusPainted(false);
+        nextToBSD1.setContentAreaFilled(false);
+        nextToBSD1.setBorderPainted(false);
+        documents.add(nextToBSD1);
+
+        JLabel lblDocs = new JLabel("New label");
+        lblDocs.setIcon(new ImageIcon("C:\\Users\\Mykie\\Downloads\\Module 2\\Checking Motor Vehicle and Document\\Documents.png"));
+        lblDocs.setBounds(0, 0, 1249, 786);
+        documents.add(lblDocs);
+
+        // Button actions
+        // start the module
+        btnStartModule1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Outline");
+            }
+        });
+        
+        // go buttons
+        // go to the checking
+        nextCheckingMV.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 1");
+            }
+        });
+        
+        // go to the checking 2
+        nexToMV2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 2");
+            }
+        });
+        
+        // go to the checking 3
+        nextToMV3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 3");
+            }
+        });
+        
+        // go to the checking 4
+        nextToMV4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 4");
+            }
+        });
+        
+        // go to the checking 5
+        nextToMV5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 5");
+            }
+        });
+        
+        // go to the checking 6
+        nextToMV6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 6");
+            }
+        });
+        
+        // go to the air supply 1
+        nextToAS1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Air Supply 1");
+            }
+        });
+        
+        // go to the air supply 2
+        nextToAS2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Air Supply 2");
+            }
+        });
+
+        // go to the documents
+        nextToDocs.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Documents");
+            }
+        });
+        
+        //back buttons
+        // back to start
+        backToWelcome.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Welcome");
+            }
+        });
+        
+        // back to the outline
+        backToOutline.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Outline");
+            }
+        });
+        
+        // back to checking 1
+        backToMV1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 1");
+            }
+        });
+        
+        // back to checking 2
+        backToMV2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 2");
+            }
+        });
+     
+        // back to checking 3
+        backToMV3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 3");
+            }
+        });
+
+        // back to checking 4
+        backToMV4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 4");
+            }
+        });
+        
+        // back to checking 5
+        backToMV5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Checking 5");
+            }
+        });
+        
+        // back to checking 6
+        backToMV6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	cardLayout.show(cardPanel, "Checking 6");
+            }
+        });
+
+        // Back to the previous air supply system panel
+        backToAS1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Air Supply 1");
+            }
+        });
+        
+        // Back to the previous air supply system panel
+        backToAS2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "Air Supply 2");
+            }
+        });
+        
+//        // Back to the previous air supply system panel
+//        backToDocs.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                cardLayout.show(cardPanel, "Documents");
+//            }
+//        });
+
+    }
+
+    private JButton createButton(String text, JPanel panel, String targetCard) {
+        JButton button = new JButton(text);
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, targetCard);
+            }
+        });
+        return button;
+    }
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                	ModuleTwo frame = new ModuleTwo();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+}
